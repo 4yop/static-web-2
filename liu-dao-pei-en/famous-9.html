@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>六道佩恩经典语录</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="">
+    <meta name="google-adsense-account" content="ca-pub-8982726393306273">
+    <meta name="baidu-site-verification" content="codeva-xEZKfvoDNR" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3CPK6GJ06E"></script>
+    <script>
+
+
+        if (['famous.aistool.com'].includes(window.location.hostname))
+        {
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'G-3CPK6GJ06E');
+        } else {
+            // 在 localhost 或其他测试域名下，只初始化 gtag 函数，但不发送数据
+            console.log(`[GA4 DEV MODE] GA tracking is disabled on: ${window.location.hostname}`);
+        }
+    </script>
+
+    <script src="https://quote.aistool.org//js/flexsearch.bundle.js"></script>
+    <script src="https://quote.aistool.org//js/vue.min.js"></script>
+    <style>
+        /* --- 核心美学变量 --- */
+        :root {
+            --primary-text: #1a1a1a;
+            --secondary-text: #666;
+            --background: #fcfcfc;
+            --card-border: #e0e0e0;
+            --tag-bg: #f5f5f5;
+            --focus-color: #333;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: var(--background);
+            color: var(--primary-text);
+            margin: 0; padding: 0; line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* 1. 头部与导航 */
+        header { background-color: white; padding: 25px 0; border-bottom: 1px solid #eee; text-align: center; }
+        header h1 { margin: 0; font-size: 2.2em; font-weight: 300; letter-spacing: 2px; color: var(--focus-color); }
+        .breadcrumb { margin-bottom: 20px; font-size: 0.9em; color: var(--secondary-text); padding-top: 20px;}
+        .breadcrumb a { color: var(--focus-color); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        /* 2. 页面标题 */
+        .page-header { text-align: center; margin: 40px 0; }
+        .page-title { font-size: 2.5em; font-weight: 700; margin-bottom: 10px; color: var(--primary-text); }
+        .author-bio { color: var(--secondary-text); font-style: italic; max-width: 700px; margin: 0 auto; }
+
+        /* 3. 搜索与筛选工具栏 */
+        #filter-toolbox {
+            background-color: white;
+            padding: 25px;
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .filter-group label { display: block; font-weight: 600; margin-bottom: 10px; color: var(--secondary-text); font-size: 0.8em; text-transform: uppercase; letter-spacing: 1px; }
+        #search-input {
+            width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 4px; font-size: 1em; outline: none; transition: all 0.3s; box-sizing: border-box;
+        }
+        #search-input:focus { border-color: var(--focus-color); box-shadow: 0 0 0 3px rgba(0,0,0,0.05); }
+
+        .tag {
+            display: inline-block; background-color: var(--tag-bg); color: var(--secondary-text);
+            padding: 6px 14px; border-radius: 4px; margin: 5px 6px 5px 0; font-size: 0.85em;
+            cursor: pointer; transition: all 0.2s; border: 1px solid transparent; user-select: none;
+        }
+        .tag.selected { background-color: var(--focus-color); color: white; }
+        .tag:hover:not(.selected) { background-color: #eee; }
+
+        /* 4. 语录卡片布局 (Masonry-like Grid) */
+        #quotes-list,#quotes-list-faker {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .quote-card {
+            background-color: white; padding: 35px; border-radius: 12px; border: 1px solid var(--card-border);
+            position: relative; overflow: hidden; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .quote-card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.06); border-color: #ccc; }
+        .quote-card::before {
+            content: "“"; position: absolute; top: -15px; left: 10px; font-size: 8em; color: #f7f7f7; font-family: serif; z-index: 0;
+        }
+        .quote-text { font-size: 1.15em; position: relative; z-index: 1; margin-bottom: 25px; color: var(--primary-text); }
+
+        .quote-footer {
+            display: flex; justify-content: space-between; align-items: center;
+            border-top: 1px solid #f9f9f9; padding-top: 15px; z-index: 1;
+        }
+        .quote-source { font-size: 0.85em; color: var(--secondary-text); font-style: italic; }
+
+        .copy-btn {
+            background: none; border: 1px solid var(--focus-color); color: var(--focus-color);
+            padding: 6px 16px; border-radius: 20px; cursor: pointer; font-size: 0.8em; font-weight: 600; transition: all 0.2s;
+        }
+        .copy-btn:hover { background-color: var(--focus-color); color: white; }
+
+        /* 5. 广告位 */
+        .ad-banner { background-color: #f9f9f9; border: 1px dashed #ddd; text-align: center; padding: 15px; margin: 30px 0; color: #999; font-size: 0.85em; border-radius: 4px; min-height: 60px; display: flex; align-items: center; justify-content: center; }
+
+        @media (max-width: 768px) {
+            #quotes-list,#quotes-list-faker { grid-template-columns: 1fr; }
+            .page-title { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+<script>
+
+</script>
+
+<header>
+    <div class="container">
+        <h1>灵感语录库</h1>
+    </div>
+</header>
+
+<main class="container" id="app">
+    <nav class="breadcrumb">
+        <a href="index.html">首页</a> &gt; <a href="celebrity-index.html">名人语录</a> &gt; 六道佩恩
+    </nav>
+
+    <section class="page-header">
+        <h2 class="page-title">六道佩恩经典语录</h2>
+<!--        <p class="author-bio">“今天很残酷，明天更残酷，后天很美好。” —— 整理自马云历年演讲与公开课，涵盖创业智慧与人生哲学。</p>-->
+    </section>
+
+    <div class="ad-banner">[Ad Placeholder: Top Banner]</div>
+
+    <section id="filter-toolbox">
+        <div class="filter-group">
+            <label>搜索</label>
+            <input type="text" id="search-input" v-model.trim="searchInput"  placeholder="输入关键词查找，例如：失败、员工、机会...">
+        </div>
+        <div class="filter-group" style="margin-top: 25px;">
+            <label>主题标签 (Topics)</label>
+            <div id="tag-container"></div>
+        </div>
+    </section>
+    <div id="quotes-list-faker" ref="quotes-list-faker">
+        
+        <article class="quote-card">
+            <div class="quote-text">你和我有着相同的梦想，都希望实现和平。你和我没有任何区别，都是为了正义而活。我对你的村子实行的正义，和你试图击倒我的想法没有任何的区别。失去真正重要的东西所带来的痛楚，对谁来说都是一样，你和我都对这样的痛楚感同身受。</div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('你和我有着相同的梦想，都希望实现和平。你和我没有任何区别，都是为了正义而活。我对你的村子实行的正义，和你试图击倒我的想法没有任何的区别。失去真正重要的东西所带来的痛楚，对谁来说都是一样，你和我都对这样的痛楚感同身受。')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">你们的国家过于庞大，因此必须在于其他大国进行的战斗中保护自己国家的利益，不然的话，国家、村子、人民就会遭殃。但是，成为你们这些大国战场的却是我们这些虚弱的小国。每每战争，我的国家都民生凋敝、饿俘遍野……无数的战争过后，大国依然国泰民安，而我们小国却只剩下无尽的痛楚。</div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('你们的国家过于庞大，因此必须在于其他大国进行的战斗中保护自己国家的利益，不然的话，国家、村子、人民就会遭殃。但是，成为你们这些大国战场的却是我们这些虚弱的小国。每每战争，我的国家都民生凋敝、饿俘遍野……无数的战争过后，大国依然国泰民安，而我们小国却只剩下无尽的痛楚。')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">一切都使我们醒悟：人类是无论如何都不会互相理解的愚蠢生物。</div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('一切都使我们醒悟：人类是无论如何都不会互相理解的愚蠢生物。')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">只要你们还认为自己是这个世界的主角 就不会将自己考虑在死亡之中</div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('只要你们还认为自己是这个世界的主角 就不会将自己考虑在死亡之中')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">你见过树，却未见过森林，只是你没有理解和平的意义而已，乖乖束手就擒吧！你的死，将会促进和平！</div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('你见过树，却未见过森林，只是你没有理解和平的意义而已，乖乖束手就擒吧！你的死，将会促进和平！')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">你为了你的正义，我为了我的正义，我们都是被卷进以正义为名的复仇漩涡中的普通人而已。可是，如果复仇以正义为名，那么这样的正义会孕育新的复仇，冤冤相报何时了。而此刻，我们只是活在这样的漩涡中，了解过去、预测未来。所有的这一切，都是历史的一部分。</div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('你为了你的正义，我为了我的正义，我们都是被卷进以正义为名的复仇漩涡中的普通人而已。可是，如果复仇以正义为名，那么这样的正义会孕育新的复仇，冤冤相报何时了。而此刻，我们只是活在这样的漩涡中，了解过去、预测未来。所有的这一切，都是历史的一部分。')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">虽然想找出死亡的意义，可最后发现只剩下...痛苦和不知该向何处发泄的仇恨。</div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('虽然想找出死亡的意义，可最后发现只剩下...痛苦和不知该向何处发泄的仇恨。')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">痛会让世界成长就像我以前样，要让这世界成长，思想，前进，需要神的说明。这世界还只是孩童，要让世界成长就要让他知道什么叫痛苦。</div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('痛会让世界成长就像我以前样，要让这世界成长，思想，前进，需要神的说明。这世界还只是孩童，要让世界成长就要让他知道什么叫痛苦。')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">我已经在无限存在的痛苦之中，有了超越凡人的成长。从凡人化为神。</div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('我已经在无限存在的痛苦之中，有了超越凡人的成长。从凡人化为神。')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">你们应该证明你们是个大国,然而你们时恃是世界的主角，远离杀戮，其实只不过是追求和平的庸者。要么是杀人，要么被人杀。联络着这两件事。战争就是伴随着死亡伤痕痛苦。</div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('你们应该证明你们是个大国,然而你们时恃是世界的主角，远离杀戮，其实只不过是追求和平的庸者。要么是杀人，要么被人杀。联络着这两件事。战争就是伴随着死亡伤痕痛苦。')">一键复制</button>
+            </div>
+        </article>
+        
+    </div>
+    <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
+        <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
+            <div class="quote-text" v-html="item.content"></div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden">—— </span>
+                <button class="copy-btn" @click="copyText(item.content)">一键复制</button>
+            </div>
+        </article>
+    </div>
+
+    <div class="ad-banner">[Ad Placeholder: Bottom Banner]</div>
+</main>
+
+<footer style="text-align: center; color: var(--secondary-text); padding: 50px 0; border-top: 1px solid #eee; margin-top: 50px; font-size: 0.9em;">
+    <p>&copy; 2025 灵感语录库. 记录时代的声音。</p>
+</footer>
+
+<script>
+
+
+
+    let QUOTES = '[{"id":229,"famous_id":9,"content":"这里死了太多的人，他们的痛苦使我成长。无知愚昧的孩童也只有知道痛苦后才能长大成人。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:45:40.543Z","updated_at":"2025-12-24T05:45:40.543Z","deleted_at":null},{"id":230,"famous_id":9,"content":"我已经在无限存在的痛苦之中，有了超越凡人的成长。从凡人化为神。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:45:40.557Z","updated_at":"2025-12-24T05:45:40.557Z","deleted_at":null},{"id":231,"famous_id":9,"content":"痛会让世界成长就像我以前样，要让这世界成长，思想，前进，需要神的说明。这世界还只是孩童，要让世界成长就要让他知道什么叫痛苦。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:45:40.571Z","updated_at":"2025-12-24T05:45:40.571Z","deleted_at":null},{"id":232,"famous_id":9,"content":"你们应该证明你们是个大国,然而你们时恃是世界的主角，远离杀戮，其实只不过是追求和平的庸者。要么是杀人，要么被人杀。联络着这两件事。战争就是伴随着死亡伤痕痛苦。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:45:40.583Z","updated_at":"2025-12-24T05:45:40.583Z","deleted_at":null},{"id":233,"famous_id":9,"content":"感受痛苦吧，体验痛苦吧，接受痛苦吧，了解痛苦吧。不知道痛苦的人是不会知道什么是和平。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:45:40.596Z","updated_at":"2025-12-24T05:45:40.596Z","deleted_at":null},{"id":234,"famous_id":9,"content":"你们的国家过于庞大，因此必须在于其他大国进行的战斗中保护自己国家的利益，不然的话，国家、村子、人民就会遭殃。但是，成为你们这些大国战场的却是我们这些虚弱的小国。每每战争，我的国家都民生凋敝、饿俘遍野……无数的战争过后，大国依然国泰民安，而我们小国却只剩下无尽的痛楚。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:45:40.608Z","updated_at":"2025-12-24T05:45:40.608Z","deleted_at":null},{"id":235,"famous_id":9,"content":"你和我有着相同的梦想，都希望实现和平。你和我没有任何区别，都是为了正义而活。我对你的村子实行的正义，和你试图击倒我的想法没有任何的区别。失去真正重要的东西所带来的痛楚，对谁来说都是一样，你和我都对这样的痛楚感同身受。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:45:40.620Z","updated_at":"2025-12-24T05:45:40.620Z","deleted_at":null},{"id":236,"famous_id":9,"content":"你为了你的正义，我为了我的正义，我们都是被卷进以正义为名的复仇漩涡中的普通人而已。可是，如果复仇以正义为名，那么这样的正义会孕育新的复仇，冤冤相报何时了。而此刻，我们只是活在这样的漩涡中，了解过去、预测未来。所有的这一切，都是历史的一部分。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:45:40.631Z","updated_at":"2025-12-24T05:45:40.631Z","deleted_at":null},{"id":237,"famous_id":9,"content":"一切都使我们醒悟：人类是无论如何都不会互相理解的愚蠢生物。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:45:40.643Z","updated_at":"2025-12-24T05:45:40.643Z","deleted_at":null},{"id":238,"famous_id":9,"content":"我，为了打破这个漩涡，而创立了地下组织。拥有让一个国家瞬间摧毁的力量。让这个世界感到真正的痛楚，才能让这个痛苦的恐怖抑制战争，将世界带往安定和平。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:45:40.654Z","updated_at":"2025-12-24T05:45:40.654Z","deleted_at":null},{"id":239,"famous_id":9,"content":"不久之后，这样的痛楚，也会在数十年之后被遗忘。一旦恐怖的抑制力不在，人们就会再次陷入纷争，于是又会有人再次令全世界感受真正的痛楚，于是一时的和平再次到来。在这无尽的漩涡长河中，因为痛楚，产生了一时的和平，这就是我的理想。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:45:40.666Z","updated_at":"2025-12-24T05:45:40.666Z","deleted_at":null},{"id":240,"famous_id":9,"content":"事出总是突然的，而理由则是后来加上去的。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:45:40.678Z","updated_at":"2025-12-24T05:45:40.678Z","deleted_at":null},{"id":241,"famous_id":9,"content":"知道什么叫历史吗？生长于，真相之下，明白过去，预感未来，知道那就叫历史。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:45:40.688Z","updated_at":"2025-12-24T05:45:40.688Z","deleted_at":null},{"id":242,"famous_id":9,"content":"总有一天，我会尝试着解开这个诅咒，如果和平真的存在，那么就让我来实现它，比方法更重要的东西是，信赖的力量。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:45:40.700Z","updated_at":"2025-12-24T05:45:40.700Z","deleted_at":null},{"id":243,"famous_id":9,"content":"你见过树，却未见过森林，只是你没有理解和平的意义而已，乖乖束手就擒吧！你的死，将会促进和平！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:45:40.711Z","updated_at":"2025-12-24T05:45:40.711Z","deleted_at":null},{"id":244,"famous_id":9,"content":"若不了解别人的痛楚，就无法真正理解他人，并且就算能够理解，也无法彼此和解。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:45:40.722Z","updated_at":"2025-12-24T05:45:40.722Z","deleted_at":null},{"id":245,"famous_id":9,"content":"虽然想找出死亡的意义，可最后发现只剩下...痛苦和不知该向何处发泄的仇恨。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:45:40.732Z","updated_at":"2025-12-24T05:45:40.732Z","deleted_at":null},{"id":246,"famous_id":9,"content":"战斗，会给双方都带来死亡、伤害和悲痛。人们都无法接受珍视的人死亡，都想的那么简单，觉得自己这方的人不会死。其实死会产生出悲痛和不知道如何释怀的仇恨。人会轻贱的死去，留下的则是永久无法言语的痛苦，这就是战争。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:45:40.743Z","updated_at":"2025-12-24T05:45:40.743Z","deleted_at":null},{"id":247,"famous_id":9,"content":"在压倒性的力量面前 一切都是毫无意义的","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:45:40.754Z","updated_at":"2025-12-24T05:45:40.754Z","deleted_at":null},{"id":248,"famous_id":9,"content":"只要你们还认为自己是这个世界的主角 就不会将自己考虑在死亡之中","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:45:40.765Z","updated_at":"2025-12-24T05:45:40.765Z","deleted_at":null}]';
+    QUOTES = JSON.parse(QUOTES)
+    if (!Array.isArray(QUOTES)) {
+        QUOTES = [];
+    }
+    function copyText(text){
+        navigator.clipboard.writeText(text).then(() => {
+            alert('复制成功！');
+        });
+    }
+
+    var app = new Vue({
+        el : '#app',
+        data() {
+            return {
+                quotes : QUOTES,
+                searchInput : '',
+
+            }
+        },
+        created() {
+
+        },
+        mounted() {
+            if (this.$refs['quotes-list-faker']) {
+                this.$refs['quotes-list-faker'].remove();
+            }
+
+        },
+        computed: {
+            filteredQuotes() {
+
+                console.log(this.searchInput)
+                if (!this.searchInput) return this.quotes;
+
+                 const res = this.quotes.filter((item)=>{
+                        const res= item.content && item.content.includes(this.searchInput)
+                        return res;
+                    });
+                return res
+            }
+        },
+        methods : {
+            copyText(text){
+                copyText(text);
+            }
+        },
+    });
+</script>
+
+
+
+</body>
+</html>

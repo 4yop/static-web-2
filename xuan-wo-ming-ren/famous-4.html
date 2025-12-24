@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>漩涡鸣人经典语录</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="">
+    <meta name="google-adsense-account" content="ca-pub-8982726393306273">
+    <meta name="baidu-site-verification" content="codeva-xEZKfvoDNR" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3CPK6GJ06E"></script>
+    <script>
+
+
+        if (['famous.aistool.com'].includes(window.location.hostname))
+        {
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'G-3CPK6GJ06E');
+        } else {
+            // 在 localhost 或其他测试域名下，只初始化 gtag 函数，但不发送数据
+            console.log(`[GA4 DEV MODE] GA tracking is disabled on: ${window.location.hostname}`);
+        }
+    </script>
+
+    <script src="https://quote.aistool.org//js/flexsearch.bundle.js"></script>
+    <script src="https://quote.aistool.org//js/vue.min.js"></script>
+    <style>
+        /* --- 核心美学变量 --- */
+        :root {
+            --primary-text: #1a1a1a;
+            --secondary-text: #666;
+            --background: #fcfcfc;
+            --card-border: #e0e0e0;
+            --tag-bg: #f5f5f5;
+            --focus-color: #333;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: var(--background);
+            color: var(--primary-text);
+            margin: 0; padding: 0; line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* 1. 头部与导航 */
+        header { background-color: white; padding: 25px 0; border-bottom: 1px solid #eee; text-align: center; }
+        header h1 { margin: 0; font-size: 2.2em; font-weight: 300; letter-spacing: 2px; color: var(--focus-color); }
+        .breadcrumb { margin-bottom: 20px; font-size: 0.9em; color: var(--secondary-text); padding-top: 20px;}
+        .breadcrumb a { color: var(--focus-color); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        /* 2. 页面标题 */
+        .page-header { text-align: center; margin: 40px 0; }
+        .page-title { font-size: 2.5em; font-weight: 700; margin-bottom: 10px; color: var(--primary-text); }
+        .author-bio { color: var(--secondary-text); font-style: italic; max-width: 700px; margin: 0 auto; }
+
+        /* 3. 搜索与筛选工具栏 */
+        #filter-toolbox {
+            background-color: white;
+            padding: 25px;
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .filter-group label { display: block; font-weight: 600; margin-bottom: 10px; color: var(--secondary-text); font-size: 0.8em; text-transform: uppercase; letter-spacing: 1px; }
+        #search-input {
+            width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 4px; font-size: 1em; outline: none; transition: all 0.3s; box-sizing: border-box;
+        }
+        #search-input:focus { border-color: var(--focus-color); box-shadow: 0 0 0 3px rgba(0,0,0,0.05); }
+
+        .tag {
+            display: inline-block; background-color: var(--tag-bg); color: var(--secondary-text);
+            padding: 6px 14px; border-radius: 4px; margin: 5px 6px 5px 0; font-size: 0.85em;
+            cursor: pointer; transition: all 0.2s; border: 1px solid transparent; user-select: none;
+        }
+        .tag.selected { background-color: var(--focus-color); color: white; }
+        .tag:hover:not(.selected) { background-color: #eee; }
+
+        /* 4. 语录卡片布局 (Masonry-like Grid) */
+        #quotes-list,#quotes-list-faker {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .quote-card {
+            background-color: white; padding: 35px; border-radius: 12px; border: 1px solid var(--card-border);
+            position: relative; overflow: hidden; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .quote-card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.06); border-color: #ccc; }
+        .quote-card::before {
+            content: "“"; position: absolute; top: -15px; left: 10px; font-size: 8em; color: #f7f7f7; font-family: serif; z-index: 0;
+        }
+        .quote-text { font-size: 1.15em; position: relative; z-index: 1; margin-bottom: 25px; color: var(--primary-text); }
+
+        .quote-footer {
+            display: flex; justify-content: space-between; align-items: center;
+            border-top: 1px solid #f9f9f9; padding-top: 15px; z-index: 1;
+        }
+        .quote-source { font-size: 0.85em; color: var(--secondary-text); font-style: italic; }
+
+        .copy-btn {
+            background: none; border: 1px solid var(--focus-color); color: var(--focus-color);
+            padding: 6px 16px; border-radius: 20px; cursor: pointer; font-size: 0.8em; font-weight: 600; transition: all 0.2s;
+        }
+        .copy-btn:hover { background-color: var(--focus-color); color: white; }
+
+        /* 5. 广告位 */
+        .ad-banner { background-color: #f9f9f9; border: 1px dashed #ddd; text-align: center; padding: 15px; margin: 30px 0; color: #999; font-size: 0.85em; border-radius: 4px; min-height: 60px; display: flex; align-items: center; justify-content: center; }
+
+        @media (max-width: 768px) {
+            #quotes-list,#quotes-list-faker { grid-template-columns: 1fr; }
+            .page-title { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+<script>
+
+</script>
+
+<header>
+    <div class="container">
+        <h1>灵感语录库</h1>
+    </div>
+</header>
+
+<main class="container" id="app">
+    <nav class="breadcrumb">
+        <a href="index.html">首页</a> &gt; <a href="celebrity-index.html">名人语录</a> &gt; 漩涡鸣人
+    </nav>
+
+    <section class="page-header">
+        <h2 class="page-title">漩涡鸣人经典语录</h2>
+<!--        <p class="author-bio">“今天很残酷，明天更残酷，后天很美好。” —— 整理自马云历年演讲与公开课，涵盖创业智慧与人生哲学。</p>-->
+    </section>
+
+    <div class="ad-banner">[Ad Placeholder: Top Banner]</div>
+
+    <section id="filter-toolbox">
+        <div class="filter-group">
+            <label>搜索</label>
+            <input type="text" id="search-input" v-model.trim="searchInput"  placeholder="输入关键词查找，例如：失败、员工、机会...">
+        </div>
+        <div class="filter-group" style="margin-top: 25px;">
+            <label>主题标签 (Topics)</label>
+            <div id="tag-container"></div>
+        </div>
+    </section>
+    <div id="quotes-list-faker" ref="quotes-list-faker">
+        
+        <article class="quote-card">
+            <div class="quote-text">成为火影没有捷径！</div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('成为火影没有捷径！')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">把佐助还给我！他才不属于你这个混蛋！不要在我的面前…把佐助的名字说得像是自己的东西一样！</div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('把佐助还给我！他才不属于你这个混蛋！不要在我的面前…把佐助的名字说得像是自己的东西一样！')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">我会成为火影！而且是超越历代火影的火影！笔直向前！我绝不会违背自己的誓言！</div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('我会成为火影！而且是超越历代火影的火影！笔直向前！我绝不会违背自己的誓言！')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">同伴对我来说是最重要的，因此，我不会让任何一个同伴走向绝路的！</div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('同伴对我来说是最重要的，因此，我不会让任何一个同伴走向绝路的！')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">高兴的时候爱怎么哭都没有关系啦!</div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('高兴的时候爱怎么哭都没有关系啦!')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">正是因为失败得多，我才会变得更强。</div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('正是因为失败得多，我才会变得更强。')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">命运，并不是由谁来决定的！</div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('命运，并不是由谁来决定的！')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">吹过村子的风开始编织，将师徒间的羁绊永远的连在一起。</div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('吹过村子的风开始编织，将师徒间的羁绊永远的连在一起。')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">这种事不试试怎么知道！！</div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('这种事不试试怎么知道！！')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">我再也不会让别人来救我了！我会冷静下来，再也不会逃跑！我再也不会输给佐助！我以左手的疼痛起誓！</div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('我再也不会让别人来救我了！我会冷静下来，再也不会逃跑！我再也不会输给佐助！我以左手的疼痛起誓！')">一键复制</button>
+            </div>
+        </article>
+        
+    </div>
+    <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
+        <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
+            <div class="quote-text" v-html="item.content"></div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden">—— </span>
+                <button class="copy-btn" @click="copyText(item.content)">一键复制</button>
+            </div>
+        </article>
+    </div>
+
+    <div class="ad-banner">[Ad Placeholder: Bottom Banner]</div>
+</main>
+
+<footer style="text-align: center; color: var(--secondary-text); padding: 50px 0; border-top: 1px solid #eee; margin-top: 50px; font-size: 0.9em;">
+    <p>&copy; 2025 灵感语录库. 记录时代的声音。</p>
+</footer>
+
+<script>
+
+
+
+    let QUOTES = '[{"id":135,"famous_id":4,"content":"成为火影没有捷径！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.075Z","updated_at":"2025-12-24T05:40:19.075Z","deleted_at":null},{"id":136,"famous_id":4,"content":"我坚守自己说过的话，这就是我的忍道","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.092Z","updated_at":"2025-12-24T05:40:19.092Z","deleted_at":null},{"id":137,"famous_id":4,"content":"高兴的时候爱怎么哭都没有关系啦!","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.105Z","updated_at":"2025-12-24T05:40:19.105Z","deleted_at":null},{"id":138,"famous_id":4,"content":"佐助是我的朋友，是好不容易才缔结下的珍贵的牵绊","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.118Z","updated_at":"2025-12-24T05:40:19.118Z","deleted_at":null},{"id":139,"famous_id":4,"content":"成为火影是我的梦想","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.129Z","updated_at":"2025-12-24T05:40:19.129Z","deleted_at":null},{"id":140,"famous_id":4,"content":"我再也不会让别人来救我了！我会冷静下来，再也不会逃跑！我再也不会输给佐助！我以左手的疼痛起誓！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.142Z","updated_at":"2025-12-24T05:40:19.142Z","deleted_at":null},{"id":141,"famous_id":4,"content":"在我成为火影之前，我是不会死的","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.155Z","updated_at":"2025-12-24T05:40:19.155Z","deleted_at":null},{"id":142,"famous_id":4,"content":"不管对手是谁都无关紧要...手臂断掉的话...就用脚踢死他...脚断掉的话...就用牙咬死他...脖子被折断的话...就用眼盯死他...眼都没有了的话...就诅咒死他...就算会被大卸八块...我也要把佐助从大蛇丸那里夺回来！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.168Z","updated_at":"2025-12-24T05:40:19.168Z","deleted_at":null},{"id":143,"famous_id":4,"content":"如果聪明是这样的话，那我宁可当一生的笨蛋。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.181Z","updated_at":"2025-12-24T05:40:19.181Z","deleted_at":null},{"id":144,"famous_id":4,"content":"命运，并不是由谁来决定的！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.191Z","updated_at":"2025-12-24T05:40:19.191Z","deleted_at":null},{"id":145,"famous_id":4,"content":"我决定了，从今天起 ，我要选择一条不会让自己后悔的路。 我要创造出属于自己的忍道！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.202Z","updated_at":"2025-12-24T05:40:19.202Z","deleted_at":null},{"id":146,"famous_id":4,"content":"我怎么可以死在这种地方？我还有非得实现不可的梦想啊……！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.215Z","updated_at":"2025-12-24T05:40:19.215Z","deleted_at":null},{"id":147,"famous_id":4,"content":"……就因为这样……你就可以把自己当成悲剧主角，每天哭得唏哩哗拉了吗……？像你这种笨蛋就永远哭下去吧！没用的爱哭鬼！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.229Z","updated_at":"2025-12-24T05:40:19.229Z","deleted_at":null},{"id":148,"famous_id":4,"content":"就是因为有这些人认同我……所以我才能够……无论是有妖狐在我的体内，或是被村子里的人们以冷漠的眼光看待，我都不觉得难过了……因为我……已经不是孤单一人了！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.240Z","updated_at":"2025-12-24T05:40:19.240Z","deleted_at":null},{"id":149,"famous_id":4,"content":"人，为什么……可以为别人赌上自己的性命呢？","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.252Z","updated_at":"2025-12-24T05:40:19.252Z","deleted_at":null},{"id":150,"famous_id":4,"content":"虽然你觉得我很强悍，但那只是因为我老是失败，觉得不甘心，所以才逞强的。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.264Z","updated_at":"2025-12-24T05:40:19.264Z","deleted_at":null},{"id":151,"famous_id":4,"content":"我才不要在这种时候放弃,即使当不成中忍,我也会通过其他的途径成为火影的,这就是我的忍道","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.276Z","updated_at":"2025-12-24T05:40:19.276Z","deleted_at":null},{"id":152,"famous_id":4,"content":"我真的这么觉得……我可以待在这里……我对我存在于这里的这件事感到安心。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.289Z","updated_at":"2025-12-24T05:40:19.289Z","deleted_at":null},{"id":153,"famous_id":4,"content":"同伴对我来说是最重要的，因此，我不会让任何一个同伴走向绝路的！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.300Z","updated_at":"2025-12-24T05:40:19.300Z","deleted_at":null},{"id":154,"famous_id":4,"content":"这种事不试试怎么知道！！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.311Z","updated_at":"2025-12-24T05:40:19.311Z","deleted_at":null},{"id":155,"famous_id":4,"content":"以前，我最讨厌佐助，他和我一样，都是没有家人的。但他是精英，我是万年吊车尾。但是在一起的时光真的是非常快乐他是……他是这个世界上最认可我的人！佐助是我的朋友，好不容易才建立起来的，珍贵的羁绊。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.322Z","updated_at":"2025-12-24T05:40:19.322Z","deleted_at":null},{"id":156,"famous_id":4,"content":"有我在，就有你在。你的未来我无法相让","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.334Z","updated_at":"2025-12-24T05:40:19.334Z","deleted_at":null},{"id":157,"famous_id":4,"content":"那种不顺眼的命运，就不要去接受！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.345Z","updated_at":"2025-12-24T05:40:19.345Z","deleted_at":null},{"id":158,"famous_id":4,"content":"因友情而战斗，因友情而欢笑。朋友，在你发现的时候，友情已经难以割舍","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.364Z","updated_at":"2025-12-24T05:40:19.364Z","deleted_at":null},{"id":159,"famous_id":4,"content":"吹过村子的风开始编织，将师徒间的羁绊永远的连在一起。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.374Z","updated_at":"2025-12-24T05:40:19.374Z","deleted_at":null},{"id":160,"famous_id":4,"content":"对自己决定的事情产生疑问就完蛋了。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.383Z","updated_at":"2025-12-24T05:40:19.383Z","deleted_at":null},{"id":161,"famous_id":4,"content":"思念着你的人所在的地方就是你的归处。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.393Z","updated_at":"2025-12-24T05:40:19.393Z","deleted_at":null},{"id":162,"famous_id":4,"content":"我会成为火影！而且是超越历代火影的火影！笔直向前！我绝不会违背自己的誓言！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.402Z","updated_at":"2025-12-24T05:40:19.402Z","deleted_at":null},{"id":163,"famous_id":4,"content":"孤独一人的感觉，真不是一般的难受啊…不知道为什么…你的心情我也能够懂…但是，我已经找到了重要的同伴，就算要把你杀了，我也要拼死保护他们！ 因为，当我身处孤身一人的地狱时，是他们拉了我一把。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.413Z","updated_at":"2025-12-24T05:40:19.413Z","deleted_at":null},{"id":164,"famous_id":4,"content":"忍者之路没有捷径。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.424Z","updated_at":"2025-12-24T05:40:19.424Z","deleted_at":null},{"id":165,"famous_id":4,"content":"正是因为失败得多，我才会变得更强。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.433Z","updated_at":"2025-12-24T05:40:19.433Z","deleted_at":null},{"id":166,"famous_id":4,"content":"如果和平在我面前的话我会用手将其抓紧，我不会放弃的。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.444Z","updated_at":"2025-12-24T05:40:19.444Z","deleted_at":null},{"id":167,"famous_id":4,"content":"我绝对不会让你杀死我的同伴。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.453Z","updated_at":"2025-12-24T05:40:19.453Z","deleted_at":null},{"id":168,"famous_id":4,"content":"我是绝对不会放弃的!因为我就是那个唯一！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.463Z","updated_at":"2025-12-24T05:40:19.463Z","deleted_at":null},{"id":169,"famous_id":4,"content":"把佐助还给我！他才不属于你这个混蛋！不要在我的面前…把佐助的名字说得像是自己的东西一样！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.474Z","updated_at":"2025-12-24T05:40:19.474Z","deleted_at":null},{"id":170,"famous_id":4,"content":"因为我们是朋友啊…就算要我解释其实我自己也不太明白…只是看到你背负着这么多还过得这么痛苦…总觉得觉得…我自己也………好痛。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.484Z","updated_at":"2025-12-24T05:40:19.484Z","deleted_at":null},{"id":171,"famous_id":4,"content":"一看到你这样，背负着重担无所适从的模样，我会觉得痛，很痛很痛。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:40:19.495Z","updated_at":"2025-12-24T05:40:19.495Z","deleted_at":null}]';
+    QUOTES = JSON.parse(QUOTES)
+    if (!Array.isArray(QUOTES)) {
+        QUOTES = [];
+    }
+    function copyText(text){
+        navigator.clipboard.writeText(text).then(() => {
+            alert('复制成功！');
+        });
+    }
+
+    var app = new Vue({
+        el : '#app',
+        data() {
+            return {
+                quotes : QUOTES,
+                searchInput : '',
+
+            }
+        },
+        created() {
+
+        },
+        mounted() {
+            if (this.$refs['quotes-list-faker']) {
+                this.$refs['quotes-list-faker'].remove();
+            }
+
+        },
+        computed: {
+            filteredQuotes() {
+
+                console.log(this.searchInput)
+                if (!this.searchInput) return this.quotes;
+
+                 const res = this.quotes.filter((item)=>{
+                        const res= item.content && item.content.includes(this.searchInput)
+                        return res;
+                    });
+                return res
+            }
+        },
+        methods : {
+            copyText(text){
+                copyText(text);
+            }
+        },
+    });
+</script>
+
+
+
+</body>
+</html>

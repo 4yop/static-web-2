@@ -1,0 +1,99 @@
+:root {
+    --primary-text: #1a1a1a;
+    --secondary-text: #666;
+    --background: #fcfcfc;
+    --card-border: #e0e0e0;
+    --focus-color: #333;
+    --accent-bg: #f9f9f9;
+}
+
+/* 1. 基础重置与排版 */
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background-color: var(--background);
+    color: var(--primary-text);
+    margin: 0; padding: 0; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* 头部和导航 */
+header { background-color: white; padding: 25px 0; border-bottom: 1px solid #eee; text-align: center; }
+header h1 { margin: 0; font-size: 2.2em; font-weight: 300; letter-spacing: 2px; color: var(--focus-color); }
+
+/* 面包屑导航 */
+.breadcrumb { margin: 20px 0; font-size: 0.9em; color: var(--secondary-text); }
+.breadcrumb a { color: var(--focus-color); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+
+/* 2. 页面标题 (H1 for SEO) */
+.page-header-block { text-align: center; margin: 40px 0 50px; }
+.page-title {
+    margin: 0 0 15px; font-size: 2.5em; font-weight: 700; color: var(--primary-text);
+}
+.subtitle {
+    color: var(--secondary-text); font-size: 1.1em; max-width: 700px; margin: 0 auto;
+}
+
+/* 3. 核心：人物枢纽卡片网格 */
+#hub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* 响应式三列布局 */
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* 4. 人物卡片样式 - 强调入口感 */
+.hub-card {
+    background-color: white;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+    text-decoration: none;
+    color: var(--primary-text);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+/* 悬停效果：轻微上浮 + 阴影加深 + 边框变色 */
+.hub-card:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-7px);
+    border-color: #ccc;
+}
+
+.hub-card-header h2 {
+    margin-top: 0; font-size: 1.8em; font-weight: 700; color: var(--focus-color);
+}
+.hub-card-role {
+    margin: 5px 0 15px 0; font-size: 1em; font-style: italic; font-weight: 400; color: #888;
+}
+.hub-card-desc {
+    color: var(--secondary-text); font-size: 0.95em; line-height: 1.6; margin-bottom: 25px;
+}
+
+/* 卡片底部行动点 (CTA) */
+.hub-card-footer {
+    text-align: right; font-weight: 700; font-size: 0.9em; color: var(--focus-color);
+    display: flex; align-items: center; justify-content: flex-end;
+}
+.hub-card-footer span { transition: margin-left 0.2s; }
+.hub-card:hover .hub-card-footer span { margin-left: 5px; }
+
+/* 待发布状态样式 */
+.hub-card.coming-soon { opacity: 0.7; cursor: default; }
+.hub-card.coming-soon:hover { transform: none; box-shadow: none; border-color: var(--card-border); }
+.hub-card.coming-soon .hub-card-footer { color: #aaa; font-weight: 400; }
+
+/* 广告位样式 (保持统一) */
+.ad-banner { background-color: var(--accent-bg); border: 1px dashed #ddd; text-align: center; padding: 15px 0; margin: 30px 0; font-style: italic; color: #999; min-height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 4px;}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    #hub-grid { grid-template-columns: 1fr; gap: 20px; }
+    .page-title { font-size: 2em; }
+    .hub-card { padding: 25px; }
+}

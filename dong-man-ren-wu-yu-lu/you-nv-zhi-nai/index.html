@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>油女志乃经典语录</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="">
+    <meta name="google-adsense-account" content="ca-pub-8982726393306273">
+    <meta name="baidu-site-verification" content="codeva-xEZKfvoDNR" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3CPK6GJ06E"></script>
+    <script>
+
+
+        if (['famous.aistool.com'].includes(window.location.hostname))
+        {
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'G-3CPK6GJ06E');
+        } else {
+            // 在 localhost 或其他测试域名下，只初始化 gtag 函数，但不发送数据
+            console.log(`[GA4 DEV MODE] GA tracking is disabled on: ${window.location.hostname}`);
+        }
+    </script>
+
+    <script src="https://quote.aistool.org//js/flexsearch.bundle.js?v=1"></script>
+    <script src="https://quote.aistool.org//js/vue.min.js?v=1"></script>
+    <link rel="stylesheet" href="https://quote.aistool.org//css/famous-quotes.css?v=1">
+</head>
+<body>
+
+<script>
+
+</script>
+
+<header>
+    <div class="container">
+        <h1>灵感语录库</h1>
+    </div>
+</header>
+
+<main class="container" id="app">
+    <nav class="breadcrumb">
+        <a href="index.html">首页</a> &gt; <a href="celebrity-index.html">名人语录</a> &gt; 油女志乃
+    </nav>
+
+    <section class="page-header">
+        <h2 class="page-title">油女志乃经典语录</h2>
+<!--        <p class="author-bio">“今天很残酷，明天更残酷，后天很美好。” —— 整理自马云历年演讲与公开课，涵盖创业智慧与人生哲学。</p>-->
+    </section>
+
+    <div class="ad-banner">[Ad Placeholder: Top Banner]</div>
+
+    <section id="filter-toolbox">
+        <div class="filter-group">
+            <label>搜索</label>
+            <input type="text" id="search-input" v-model.trim="searchInput"  placeholder="输入关键词查找，例如：失败、员工、机会...">
+        </div>
+<!--        <div class="filter-group" style="margin-top: 25px;">-->
+<!--            <label>主题标签 (Topics)</label>-->
+<!--            <div id="tag-container"></div>-->
+<!--        </div>-->
+    </section>
+    <div id="quotes-list-faker" ref="quotes-list-faker">
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/dong-man-ren-wu-yu-lu/you-nv-zhi-nai/quote-315.html">为什么呢...</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('为什么呢...')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/dong-man-ren-wu-yu-lu/you-nv-zhi-nai/quote-316.html">放不下过去 逃避未来的人 真的能算活在当下吗? 我知道那些为了遥远的目标 抓紧眼前一分一秒努力活着的人 他们才是真正活在当下的人</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('放不下过去 逃避未来的人 真的能算活在当下吗? 我知道那些为了遥远的目标 抓紧眼前一分一秒努力活着的人 他们才是真正活在当下的人')">一键复制</button>
+            </div>
+        </article>
+        
+    </div>
+    <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
+        <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
+            <div class="quote-text"  @click="window.open(item.url, '_blank')" v-html="item.content"></div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden">—— </span>
+                <button class="copy-btn" @click="copyText(item.content)">一键复制</button>
+            </div>
+        </article>
+    </div>
+
+    <div class="ad-banner">[Ad Placeholder: Bottom Banner]</div>
+</main>
+
+<footer style="text-align: center; color: var(--secondary-text); padding: 50px 0; border-top: 1px solid #eee; margin-top: 50px; font-size: 0.9em;">
+    <p>&copy; 2025 灵感语录库. 记录时代的声音。</p>
+</footer>
+
+</body>
+</html>
+<script async>
+
+
+
+    let QUOTES = '[{"id":315,"famous_id":20,"content":"为什么呢...","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.783Z","updated_at":"2025-12-24T05:52:40.783Z","deleted_at":null,"url":"https://quote.aistool.org/dong-man-ren-wu-yu-lu/you-nv-zhi-nai/quote-315.html"},{"id":316,"famous_id":20,"content":"放不下过去 逃避未来的人 真的能算活在当下吗? 我知道那些为了遥远的目标 抓紧眼前一分一秒努力活着的人 他们才是真正活在当下的人","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.793Z","updated_at":"2025-12-24T05:52:40.793Z","deleted_at":null,"url":"https://quote.aistool.org/dong-man-ren-wu-yu-lu/you-nv-zhi-nai/quote-316.html"}]';
+    QUOTES = JSON.parse(QUOTES)
+    if (!Array.isArray(QUOTES)) {
+        QUOTES = [];
+    }
+    function copyText(text){
+        navigator.clipboard.writeText(text).then(() => {
+            alert('复制成功！');
+        });
+    }
+
+    var app = new Vue({
+        el : '#app',
+        data() {
+            return {
+                quotes : QUOTES,
+                searchInput : '',
+
+            }
+        },
+        created() {
+
+        },
+        mounted() {
+            if (this.$refs['quotes-list-faker']) {
+                this.$refs['quotes-list-faker'].remove();
+            }
+
+        },
+        computed: {
+            filteredQuotes() {
+
+                console.log(this.searchInput)
+                if (!this.searchInput) return this.quotes;
+
+                const res = this.quotes.filter((item)=>{
+                    const res= item.content && item.content.includes(this.searchInput)
+                    return res;
+                });
+                return res
+            }
+        },
+        methods : {
+            copyText(text){
+                copyText(text);
+            }
+        },
+    });
+</script>

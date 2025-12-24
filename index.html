@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>灵感语录库：名人、电影、书籍、动漫台词精选索引</title>
+    <meta name="description" content="互联网最全面的中文语录索引库。快速查找名人金句、经典电影台词、书籍名言及热门网络文案。极简设计，一键复制。">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* --- 核心美学变量 (与 V2 保持一致) --- */
+        :root {
+            --primary-text: #1a1a1a;
+            --secondary-text: #666;
+            --background: #fcfcfc;
+            --card-border: #e0e0e0;
+            --tag-bg: #f5f5f5;
+            --focus-color: #333;
+        }
+
+        /* 1. 基础重置与排版 */
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: var(--background);
+            color: var(--primary-text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* 头部和网站名 */
+        header { background-color: white; padding: 25px 0; border-bottom: 1px solid #eee; text-align: center; }
+        header h1 { margin: 0; font-size: 2.2em; font-weight: 300; letter-spacing: 2px; color: var(--focus-color); }
+
+        /* 首页中心标题 (H1 for SEO) */
+        .page-title {
+            text-align: center;
+            margin: 50px 0 20px;
+            font-size: 2.8em; /* 首页H1要比分类页H2更大 */
+            font-weight: 700;
+            color: var(--primary-text);
+        }
+        .subtitle {
+            text-align: center;
+            color: var(--secondary-text);
+            margin-bottom: 50px;
+            font-size: 1.1em;
+        }
+
+        /* 2. 枢纽卡片网格 - 引导用户 */
+        #hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* 三列卡片布局 */
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        /* 3. 枢纽卡片样式 - 优雅的可点击入口 */
+        .hub-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid var(--card-border);
+            text-decoration: none; /* 移除链接下划线 */
+            color: var(--primary-text);
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        .hub-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+            border-color: var(--focus-color);
+        }
+
+        .hub-card h2 {
+            margin-top: 0;
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--focus-color);
+        }
+        .hub-card p {
+            color: var(--secondary-text);
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        /* 广告位样式 */
+        .ad-banner { background-color: #EEE; border: 1px dashed #DDD; text-align: center; padding: 15px 0; margin: 40px 0; font-style: italic; color: #999; height: 60px; line-height: 30px; border-radius: 4px;}
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            #hub-grid { grid-template-columns: 1fr; gap: 20px; }
+            .page-title { font-size: 2.2em; }
+        }
+    </style>
+</head>
+<body>
+
+<header id="header">
+    <div class="container">
+        <h1>灵感语录库</h1>
+    </div>
+</header>
+
+<main id="content-area" class="container">
+
+    <h1 class="page-title">名人、电影、书籍、动漫台词精选索引</h1>
+    <p class="subtitle">— 互联网上最全面、分类最精细的中文语录资料库 —</p>
+
+    <div id="ad-top" class="ad-banner"> [顶部横幅广告位 1100x60] </div>
+
+    <section id="hub-grid">
+
+        <a href="jack-ma-yulu.html" class="hub-card">
+            <h2>🖋️ 名人与企业家语录</h2>
+            <p>收录成功人士、哲学家、历史人物的励志金句。已收录：**马云**、鲁迅、Elon Musk 等。</p>
+            <p style="text-align: right; color: var(--focus-color); font-weight: 700;">查看索引 →</p>
+        </a>
+
+        <a href="#" class="hub-card">
+            <h2>🎬 电影与文学台词</h2>
+            <p>汇集奥斯卡获奖影片、经典文学作品中的感人台词和深刻哲理，寻找你的写作灵感。</p>
+            <p style="text-align: right; color: var(--focus-color); font-weight: 700;">敬请期待 →</p>
+        </a>
+
+        <a href="#" class="hub-card">
+            <h2>🚀 动漫与网络流行语</h2>
+            <p>热门动漫的燃情台词、二次元金句以及最新的网络热词、梗的出处与解释。</p>
+            <p style="text-align: right; color: var(--focus-color); font-weight: 700;">敬请期待 →</p>
+        </a>
+
+        <a href="#" class="hub-card">
+            <h2>✨ 场景文案精选</h2>
+            <p>按用途分类：朋友圈、毕业季、爱情、生日祝福等，让你一键拥有高质量文案。</p>
+            <p style="text-align: right; color: var(--focus-color); font-weight: 700;">敬请期待 →</p>
+        </a>
+
+    </section>
+
+    <div id="ad-middle" class="ad-banner"> [中部矩形广告位 300x250] </div>
+
+</main>
+
+<footer id="footer" class="container" style="text-align: center; color: var(--secondary-text); padding: 30px 0; border-top: 1px solid #f0f0f0; margin-top: 40px;">
+    <p>SEO Tactic: Content Hub. &copy; 2025 灵感语录库.</p>
+</footer>
+
+</body>
+</html>
+<script type="module" src="/src/main.ts"></script>

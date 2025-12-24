@@ -162,7 +162,9 @@
     <div id="quotes-list-faker" ref="quotes-list-faker">
         
         <article class="quote-card">
-            <div class="quote-text">你心里是不是牵挂着重要的人呢？当一个人想保护心里最重要的东西时，就真的能变强。你一定会变得更强……</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/bai/quote-339.html">你心里是不是牵挂着重要的人呢？当一个人想保护心里最重要的东西时，就真的能变强。你一定会变得更强……</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('你心里是不是牵挂着重要的人呢？当一个人想保护心里最重要的东西时，就真的能变强。你一定会变得更强……')">一键复制</button>
@@ -170,7 +172,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">我为了我的梦想(而战)，你们为了你们的梦想(而战)，请不要怨我。</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/bai/quote-340.html">我为了我的梦想(而战)，你们为了你们的梦想(而战)，请不要怨我。</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('我为了我的梦想(而战)，你们为了你们的梦想(而战)，请不要怨我。')">一键复制</button>
@@ -178,7 +182,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">最痛苦的事情就是，在这个世界上，根本没有人需要我。</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/bai/quote-341.html">最痛苦的事情就是，在这个世界上，根本没有人需要我。</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('最痛苦的事情就是，在这个世界上，根本没有人需要我。')">一键复制</button>
@@ -186,7 +192,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">当有人打从心里认同你，那个人就会成为你最重要的人。</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/bai/quote-342.html">当有人打从心里认同你，那个人就会成为你最重要的人。</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('当有人打从心里认同你，那个人就会成为你最重要的人。')">一键复制</button>
@@ -194,7 +202,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">我想保护对我重要的人，我想实现他的梦想，那就是我的梦想。</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/bai/quote-343.html">我想保护对我重要的人，我想实现他的梦想，那就是我的梦想。</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('我想保护对我重要的人，我想实现他的梦想，那就是我的梦想。')">一键复制</button>
@@ -202,7 +212,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">我是男的</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/bai/quote-344.html">我是男的</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('我是男的')">一键复制</button>
@@ -212,7 +224,7 @@
     </div>
     <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
         <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
-            <div class="quote-text" v-html="item.content"></div>
+            <div class="quote-text"  @click="window.open(item.url, '_blank')" v-html="item.content"></div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden">—— </span>
                 <button class="copy-btn" @click="copyText(item.content)">一键复制</button>
@@ -231,7 +243,7 @@
 
 
 
-    let QUOTES = '[{"id":339,"famous_id":26,"content":"你心里是不是牵挂着重要的人呢？当一个人想保护心里最重要的东西时，就真的能变强。你一定会变得更强……","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:41.130Z","updated_at":"2025-12-24T05:52:41.130Z","deleted_at":null},{"id":340,"famous_id":26,"content":"我为了我的梦想(而战)，你们为了你们的梦想(而战)，请不要怨我。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:41.140Z","updated_at":"2025-12-24T05:52:41.140Z","deleted_at":null},{"id":341,"famous_id":26,"content":"最痛苦的事情就是，在这个世界上，根本没有人需要我。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:41.150Z","updated_at":"2025-12-24T05:52:41.150Z","deleted_at":null},{"id":342,"famous_id":26,"content":"当有人打从心里认同你，那个人就会成为你最重要的人。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:41.160Z","updated_at":"2025-12-24T05:52:41.160Z","deleted_at":null},{"id":343,"famous_id":26,"content":"我想保护对我重要的人，我想实现他的梦想，那就是我的梦想。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:41.171Z","updated_at":"2025-12-24T05:52:41.171Z","deleted_at":null},{"id":344,"famous_id":26,"content":"我是男的","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:41.183Z","updated_at":"2025-12-24T05:52:41.183Z","deleted_at":null}]';
+    let QUOTES = '[{"id":339,"famous_id":26,"content":"你心里是不是牵挂着重要的人呢？当一个人想保护心里最重要的东西时，就真的能变强。你一定会变得更强……","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:41.130Z","updated_at":"2025-12-24T05:52:41.130Z","deleted_at":null,"url":"https://quote.aistool.org/bai/quote-339.html"},{"id":340,"famous_id":26,"content":"我为了我的梦想(而战)，你们为了你们的梦想(而战)，请不要怨我。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:41.140Z","updated_at":"2025-12-24T05:52:41.140Z","deleted_at":null,"url":"https://quote.aistool.org/bai/quote-340.html"},{"id":341,"famous_id":26,"content":"最痛苦的事情就是，在这个世界上，根本没有人需要我。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:41.150Z","updated_at":"2025-12-24T05:52:41.150Z","deleted_at":null,"url":"https://quote.aistool.org/bai/quote-341.html"},{"id":342,"famous_id":26,"content":"当有人打从心里认同你，那个人就会成为你最重要的人。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:41.160Z","updated_at":"2025-12-24T05:52:41.160Z","deleted_at":null,"url":"https://quote.aistool.org/bai/quote-342.html"},{"id":343,"famous_id":26,"content":"我想保护对我重要的人，我想实现他的梦想，那就是我的梦想。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:41.171Z","updated_at":"2025-12-24T05:52:41.171Z","deleted_at":null,"url":"https://quote.aistool.org/bai/quote-343.html"},{"id":344,"famous_id":26,"content":"我是男的","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:41.183Z","updated_at":"2025-12-24T05:52:41.183Z","deleted_at":null,"url":"https://quote.aistool.org/bai/quote-344.html"}]';
     QUOTES = JSON.parse(QUOTES)
     if (!Array.isArray(QUOTES)) {
         QUOTES = [];

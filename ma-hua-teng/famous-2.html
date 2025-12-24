@@ -164,7 +164,7 @@
     </div>
     <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
         <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
-            <div class="quote-text" v-html="item.content"></div>
+            <div class="quote-text"  @click="window.open(item.url, '_blank')" v-html="item.content"></div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden">—— </span>
                 <button class="copy-btn" @click="copyText(item.content)">一键复制</button>

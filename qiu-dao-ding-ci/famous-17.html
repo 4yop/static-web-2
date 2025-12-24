@@ -162,7 +162,9 @@
     <div id="quotes-list-faker" ref="quotes-list-faker">
         
         <article class="quote-card">
-            <div class="quote-text">我要吃肉！</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/qiu-dao-ding-ci/quote-303.html">我要吃肉！</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('我要吃肉！')">一键复制</button>
@@ -170,7 +172,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">我不是死肥猪！我只是比较丰满而已！</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/qiu-dao-ding-ci/quote-304.html">我不是死肥猪！我只是比较丰满而已！</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('我不是死肥猪！我只是比较丰满而已！')">一键复制</button>
@@ -178,7 +182,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">这一拳，比生命还要沉重!</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/qiu-dao-ding-ci/quote-305.html">这一拳，比生命还要沉重!</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('这一拳，比生命还要沉重!')">一键复制</button>
@@ -186,7 +192,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">我原本以为人长大成人后身心自然就会成长</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/qiu-dao-ding-ci/quote-306.html">我原本以为人长大成人后身心自然就会成长</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('我原本以为人长大成人后身心自然就会成长')">一键复制</button>
@@ -194,7 +202,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">我，秋道丁次，为守护山中、奈良二族，为保护木叶村，在此破茧成蝶，展翅高飞</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/qiu-dao-ding-ci/quote-307.html">我，秋道丁次，为守护山中、奈良二族，为保护木叶村，在此破茧成蝶，展翅高飞</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('我，秋道丁次，为守护山中、奈良二族，为保护木叶村，在此破茧成蝶，展翅高飞')">一键复制</button>
@@ -204,7 +214,7 @@
     </div>
     <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
         <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
-            <div class="quote-text" v-html="item.content"></div>
+            <div class="quote-text"  @click="window.open(item.url, '_blank')" v-html="item.content"></div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden">—— </span>
                 <button class="copy-btn" @click="copyText(item.content)">一键复制</button>
@@ -223,7 +233,7 @@
 
 
 
-    let QUOTES = '[{"id":303,"famous_id":17,"content":"我要吃肉！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.647Z","updated_at":"2025-12-24T05:52:40.647Z","deleted_at":null},{"id":304,"famous_id":17,"content":"我不是死肥猪！我只是比较丰满而已！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.658Z","updated_at":"2025-12-24T05:52:40.658Z","deleted_at":null},{"id":305,"famous_id":17,"content":"这一拳，比生命还要沉重!","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.667Z","updated_at":"2025-12-24T05:52:40.667Z","deleted_at":null},{"id":306,"famous_id":17,"content":"我原本以为人长大成人后身心自然就会成长","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.676Z","updated_at":"2025-12-24T05:52:40.676Z","deleted_at":null},{"id":307,"famous_id":17,"content":"我，秋道丁次，为守护山中、奈良二族，为保护木叶村，在此破茧成蝶，展翅高飞","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.687Z","updated_at":"2025-12-24T05:52:40.687Z","deleted_at":null}]';
+    let QUOTES = '[{"id":303,"famous_id":17,"content":"我要吃肉！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.647Z","updated_at":"2025-12-24T05:52:40.647Z","deleted_at":null,"url":"https://quote.aistool.org/qiu-dao-ding-ci/quote-303.html"},{"id":304,"famous_id":17,"content":"我不是死肥猪！我只是比较丰满而已！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.658Z","updated_at":"2025-12-24T05:52:40.658Z","deleted_at":null,"url":"https://quote.aistool.org/qiu-dao-ding-ci/quote-304.html"},{"id":305,"famous_id":17,"content":"这一拳，比生命还要沉重!","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.667Z","updated_at":"2025-12-24T05:52:40.667Z","deleted_at":null,"url":"https://quote.aistool.org/qiu-dao-ding-ci/quote-305.html"},{"id":306,"famous_id":17,"content":"我原本以为人长大成人后身心自然就会成长","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.676Z","updated_at":"2025-12-24T05:52:40.676Z","deleted_at":null,"url":"https://quote.aistool.org/qiu-dao-ding-ci/quote-306.html"},{"id":307,"famous_id":17,"content":"我，秋道丁次，为守护山中、奈良二族，为保护木叶村，在此破茧成蝶，展翅高飞","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.687Z","updated_at":"2025-12-24T05:52:40.687Z","deleted_at":null,"url":"https://quote.aistool.org/qiu-dao-ding-ci/quote-307.html"}]';
     QUOTES = JSON.parse(QUOTES)
     if (!Array.isArray(QUOTES)) {
         QUOTES = [];

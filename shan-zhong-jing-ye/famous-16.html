@@ -162,7 +162,9 @@
     <div id="quotes-list-faker" ref="quotes-list-faker">
         
         <article class="quote-card">
-            <div class="quote-text">我觉得如果你在还是个花蕾的状况下枯萎，那就真的太可惜了！一朵花不绽放就没有意义啦，因为，搞不好那是朵...比大波斯菊更漂亮的花喔！</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/shan-zhong-jing-ye/quote-302.html">我觉得如果你在还是个花蕾的状况下枯萎，那就真的太可惜了！一朵花不绽放就没有意义啦，因为，搞不好那是朵...比大波斯菊更漂亮的花喔！</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('我觉得如果你在还是个花蕾的状况下枯萎，那就真的太可惜了！一朵花不绽放就没有意义啦，因为，搞不好那是朵...比大波斯菊更漂亮的花喔！')">一键复制</button>
@@ -172,7 +174,7 @@
     </div>
     <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
         <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
-            <div class="quote-text" v-html="item.content"></div>
+            <div class="quote-text"  @click="window.open(item.url, '_blank')" v-html="item.content"></div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden">—— </span>
                 <button class="copy-btn" @click="copyText(item.content)">一键复制</button>
@@ -191,7 +193,7 @@
 
 
 
-    let QUOTES = '[{"id":302,"famous_id":16,"content":"我觉得如果你在还是个花蕾的状况下枯萎，那就真的太可惜了！一朵花不绽放就没有意义啦，因为，搞不好那是朵...比大波斯菊更漂亮的花喔！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.633Z","updated_at":"2025-12-24T05:52:40.633Z","deleted_at":null}]';
+    let QUOTES = '[{"id":302,"famous_id":16,"content":"我觉得如果你在还是个花蕾的状况下枯萎，那就真的太可惜了！一朵花不绽放就没有意义啦，因为，搞不好那是朵...比大波斯菊更漂亮的花喔！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.633Z","updated_at":"2025-12-24T05:52:40.633Z","deleted_at":null,"url":"https://quote.aistool.org/shan-zhong-jing-ye/quote-302.html"}]';
     QUOTES = JSON.parse(QUOTES)
     if (!Array.isArray(QUOTES)) {
         QUOTES = [];

@@ -162,7 +162,9 @@
     <div id="quotes-list-faker" ref="quotes-list-faker">
         
         <article class="quote-card">
-            <div class="quote-text">我是木叶高傲的苍蓝猛兽...疯狂阿凯！</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/mai-te-kai/quote-286.html">我是木叶高傲的苍蓝猛兽...疯狂阿凯！</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('我是木叶高傲的苍蓝猛兽...疯狂阿凯！')">一键复制</button>
@@ -170,7 +172,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">不相信自己的人，连努力的价值都没有</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/mai-te-kai/quote-287.html">不相信自己的人，连努力的价值都没有</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('不相信自己的人，连努力的价值都没有')">一键复制</button>
@@ -178,7 +182,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">真正重要的东西啊...不管痛苦也好、悲伤也好...都要努力到底，就算失去生命，也要用双手来保护到底啊！如此一来，就算死掉的话，也会永远留下男子汉...活过的证据</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/mai-te-kai/quote-288.html">真正重要的东西啊...不管痛苦也好、悲伤也好...都要努力到底，就算失去生命，也要用双手来保护到底啊！如此一来，就算死掉的话，也会永远留下男子汉...活过的证据</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('真正重要的东西啊...不管痛苦也好、悲伤也好...都要努力到底，就算失去生命，也要用双手来保护到底啊！如此一来，就算死掉的话，也会永远留下男子汉...活过的证据')">一键复制</button>
@@ -186,7 +192,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">失去梦想后你会比现在更痛苦。</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/mai-te-kai/quote-289.html">失去梦想后你会比现在更痛苦。</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('失去梦想后你会比现在更痛苦。')">一键复制</button>
@@ -194,7 +202,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">能够为自己坚信的事物去努力、去拼搏的人才是真正幸福的</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/mai-te-kai/quote-290.html">能够为自己坚信的事物去努力、去拼搏的人才是真正幸福的</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('能够为自己坚信的事物去努力、去拼搏的人才是真正幸福的')">一键复制</button>
@@ -202,7 +212,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">青春就是热血!</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/mai-te-kai/quote-291.html">青春就是热血!</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('青春就是热血!')">一键复制</button>
@@ -210,7 +222,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">青春不能回头，所以青春没有终点</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/mai-te-kai/quote-292.html">青春不能回头，所以青春没有终点</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('青春不能回头，所以青春没有终点')">一键复制</button>
@@ -218,7 +232,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">我的青春没有后悔</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/mai-te-kai/quote-293.html">我的青春没有后悔</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('我的青春没有后悔')">一键复制</button>
@@ -228,7 +244,7 @@
     </div>
     <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
         <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
-            <div class="quote-text" v-html="item.content"></div>
+            <div class="quote-text"  @click="window.open(item.url, '_blank')" v-html="item.content"></div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden">—— </span>
                 <button class="copy-btn" @click="copyText(item.content)">一键复制</button>
@@ -247,7 +263,7 @@
 
 
 
-    let QUOTES = '[{"id":286,"famous_id":13,"content":"我是木叶高傲的苍蓝猛兽...疯狂阿凯！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.458Z","updated_at":"2025-12-24T05:52:40.458Z","deleted_at":null},{"id":287,"famous_id":13,"content":"不相信自己的人，连努力的价值都没有","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.469Z","updated_at":"2025-12-24T05:52:40.469Z","deleted_at":null},{"id":288,"famous_id":13,"content":"真正重要的东西啊...不管痛苦也好、悲伤也好...都要努力到底，就算失去生命，也要用双手来保护到底啊！如此一来，就算死掉的话，也会永远留下男子汉...活过的证据","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.479Z","updated_at":"2025-12-24T05:52:40.479Z","deleted_at":null},{"id":289,"famous_id":13,"content":"失去梦想后你会比现在更痛苦。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.488Z","updated_at":"2025-12-24T05:52:40.488Z","deleted_at":null},{"id":290,"famous_id":13,"content":"能够为自己坚信的事物去努力、去拼搏的人才是真正幸福的","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.498Z","updated_at":"2025-12-24T05:52:40.498Z","deleted_at":null},{"id":291,"famous_id":13,"content":"青春就是热血!","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.508Z","updated_at":"2025-12-24T05:52:40.508Z","deleted_at":null},{"id":292,"famous_id":13,"content":"青春不能回头，所以青春没有终点","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.517Z","updated_at":"2025-12-24T05:52:40.517Z","deleted_at":null},{"id":293,"famous_id":13,"content":"我的青春没有后悔","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.529Z","updated_at":"2025-12-24T05:52:40.529Z","deleted_at":null}]';
+    let QUOTES = '[{"id":286,"famous_id":13,"content":"我是木叶高傲的苍蓝猛兽...疯狂阿凯！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.458Z","updated_at":"2025-12-24T05:52:40.458Z","deleted_at":null,"url":"https://quote.aistool.org/mai-te-kai/quote-286.html"},{"id":287,"famous_id":13,"content":"不相信自己的人，连努力的价值都没有","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.469Z","updated_at":"2025-12-24T05:52:40.469Z","deleted_at":null,"url":"https://quote.aistool.org/mai-te-kai/quote-287.html"},{"id":288,"famous_id":13,"content":"真正重要的东西啊...不管痛苦也好、悲伤也好...都要努力到底，就算失去生命，也要用双手来保护到底啊！如此一来，就算死掉的话，也会永远留下男子汉...活过的证据","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.479Z","updated_at":"2025-12-24T05:52:40.479Z","deleted_at":null,"url":"https://quote.aistool.org/mai-te-kai/quote-288.html"},{"id":289,"famous_id":13,"content":"失去梦想后你会比现在更痛苦。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.488Z","updated_at":"2025-12-24T05:52:40.488Z","deleted_at":null,"url":"https://quote.aistool.org/mai-te-kai/quote-289.html"},{"id":290,"famous_id":13,"content":"能够为自己坚信的事物去努力、去拼搏的人才是真正幸福的","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.498Z","updated_at":"2025-12-24T05:52:40.498Z","deleted_at":null,"url":"https://quote.aistool.org/mai-te-kai/quote-290.html"},{"id":291,"famous_id":13,"content":"青春就是热血!","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.508Z","updated_at":"2025-12-24T05:52:40.508Z","deleted_at":null,"url":"https://quote.aistool.org/mai-te-kai/quote-291.html"},{"id":292,"famous_id":13,"content":"青春不能回头，所以青春没有终点","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.517Z","updated_at":"2025-12-24T05:52:40.517Z","deleted_at":null,"url":"https://quote.aistool.org/mai-te-kai/quote-292.html"},{"id":293,"famous_id":13,"content":"我的青春没有后悔","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.529Z","updated_at":"2025-12-24T05:52:40.529Z","deleted_at":null,"url":"https://quote.aistool.org/mai-te-kai/quote-293.html"}]';
     QUOTES = JSON.parse(QUOTES)
     if (!Array.isArray(QUOTES)) {
         QUOTES = [];

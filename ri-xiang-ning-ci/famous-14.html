@@ -162,7 +162,9 @@
     <div id="quotes-list-faker" ref="quotes-list-faker">
         
         <article class="quote-card">
-            <div class="quote-text">在我交手过的所有人里最强的那个人曾经这么对我说过，“因为你和我不一样，不是个吊车尾的人”，我通常都是大家口中说的天才，所以我绝对不可以输给你，这么做是为了相信我这个凡人是天才的他们</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/ri-xiang-ning-ci/quote-294.html">在我交手过的所有人里最强的那个人曾经这么对我说过，“因为你和我不一样，不是个吊车尾的人”，我通常都是大家口中说的天才，所以我绝对不可以输给你，这么做是为了相信我这个凡人是天才的他们</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('在我交手过的所有人里最强的那个人曾经这么对我说过，“因为你和我不一样，不是个吊车尾的人”，我通常都是大家口中说的天才，所以我绝对不可以输给你，这么做是为了相信我这个凡人是天才的他们')">一键复制</button>
@@ -170,7 +172,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">命运，并不是由别人来决定的</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/ri-xiang-ning-ci/quote-295.html">命运，并不是由别人来决定的</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('命运，并不是由别人来决定的')">一键复制</button>
@@ -178,7 +182,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">因为你说我是个天才</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/ri-xiang-ning-ci/quote-296.html">因为你说我是个天才</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('因为你说我是个天才')">一键复制</button>
@@ -186,7 +192,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">鸣人，你的眼睛比我炯炯有神</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/ri-xiang-ning-ci/quote-297.html">鸣人，你的眼睛比我炯炯有神</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('鸣人，你的眼睛比我炯炯有神')">一键复制</button>
@@ -196,7 +204,7 @@
     </div>
     <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
         <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
-            <div class="quote-text" v-html="item.content"></div>
+            <div class="quote-text"  @click="window.open(item.url, '_blank')" v-html="item.content"></div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden">—— </span>
                 <button class="copy-btn" @click="copyText(item.content)">一键复制</button>
@@ -215,7 +223,7 @@
 
 
 
-    let QUOTES = '[{"id":294,"famous_id":14,"content":"在我交手过的所有人里最强的那个人曾经这么对我说过，“因为你和我不一样，不是个吊车尾的人”，我通常都是大家口中说的天才，所以我绝对不可以输给你，这么做是为了相信我这个凡人是天才的他们","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.544Z","updated_at":"2025-12-24T05:52:40.544Z","deleted_at":null},{"id":295,"famous_id":14,"content":"命运，并不是由别人来决定的","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.554Z","updated_at":"2025-12-24T05:52:40.554Z","deleted_at":null},{"id":296,"famous_id":14,"content":"因为你说我是个天才","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.564Z","updated_at":"2025-12-24T05:52:40.564Z","deleted_at":null},{"id":297,"famous_id":14,"content":"鸣人，你的眼睛比我炯炯有神","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.573Z","updated_at":"2025-12-24T05:52:40.573Z","deleted_at":null}]';
+    let QUOTES = '[{"id":294,"famous_id":14,"content":"在我交手过的所有人里最强的那个人曾经这么对我说过，“因为你和我不一样，不是个吊车尾的人”，我通常都是大家口中说的天才，所以我绝对不可以输给你，这么做是为了相信我这个凡人是天才的他们","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.544Z","updated_at":"2025-12-24T05:52:40.544Z","deleted_at":null,"url":"https://quote.aistool.org/ri-xiang-ning-ci/quote-294.html"},{"id":295,"famous_id":14,"content":"命运，并不是由别人来决定的","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.554Z","updated_at":"2025-12-24T05:52:40.554Z","deleted_at":null,"url":"https://quote.aistool.org/ri-xiang-ning-ci/quote-295.html"},{"id":296,"famous_id":14,"content":"因为你说我是个天才","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.564Z","updated_at":"2025-12-24T05:52:40.564Z","deleted_at":null,"url":"https://quote.aistool.org/ri-xiang-ning-ci/quote-296.html"},{"id":297,"famous_id":14,"content":"鸣人，你的眼睛比我炯炯有神","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.573Z","updated_at":"2025-12-24T05:52:40.573Z","deleted_at":null,"url":"https://quote.aistool.org/ri-xiang-ning-ci/quote-297.html"}]';
     QUOTES = JSON.parse(QUOTES)
     if (!Array.isArray(QUOTES)) {
         QUOTES = [];

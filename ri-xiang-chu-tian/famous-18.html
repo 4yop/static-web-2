@@ -162,7 +162,9 @@
     <div id="quotes-list-faker" ref="quotes-list-faker">
         
         <article class="quote-card">
-            <div class="quote-text">我会一直保护你 就好像你当初保护我一样</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/ri-xiang-chu-tian/quote-308.html">我会一直保护你 就好像你当初保护我一样</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('我会一直保护你 就好像你当初保护我一样')">一键复制</button>
@@ -170,7 +172,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">我无法与他并肩，但至少我要站在能看到鸣人背影的地方。</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/ri-xiang-chu-tian/quote-309.html">我无法与他并肩，但至少我要站在能看到鸣人背影的地方。</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('我无法与他并肩，但至少我要站在能看到鸣人背影的地方。')">一键复制</button>
@@ -178,7 +182,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">这个举动是我自己决定的……站在这里，是我自己的意志。以前的我就只会哭，做什么都是早早就放弃……好几次差点就要误入歧途……是鸣人你将这样的我引入了正途……我一直在追赶着鸣人你……一直想要追赶上鸣人你……一直都想和鸣人你一起并肩向前一直都想到鸣人你那里，是鸣人你改变了我，是鸣人你的笑容拯救了我，所以，如果是为了保护鸣人你的话，我毫不畏惧死亡，因为我最喜欢鸣人你了……”</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/ri-xiang-chu-tian/quote-310.html">这个举动是我自己决定的……站在这里，是我自己的意志。以前的我就只会哭，做什么都是早早就放弃……好几次差点就要误入歧途……是鸣人你将这样的我引入了正途……我一直在追赶着鸣人你……一直想要追赶上鸣人你……一直都想和鸣人你一起并肩向前一直都想到鸣人你那里，是鸣人你改变了我，是鸣人你的笑容拯救了我，所以，如果是为了保护鸣人你的话，我毫不畏惧死亡，因为我最喜欢鸣人你了……”</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('这个举动是我自己决定的……站在这里，是我自己的意志。以前的我就只会哭，做什么都是早早就放弃……好几次差点就要误入歧途……是鸣人你将这样的我引入了正途……我一直在追赶着鸣人你……一直想要追赶上鸣人你……一直都想和鸣人你一起并肩向前一直都想到鸣人你那里，是鸣人你改变了我，是鸣人你的笑容拯救了我，所以，如果是为了保护鸣人你的话，我毫不畏惧死亡，因为我最喜欢鸣人你了……”')">一键复制</button>
@@ -186,7 +192,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">永不放弃勇往直前，这是我的忍道</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/ri-xiang-chu-tian/quote-311.html">永不放弃勇往直前，这是我的忍道</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('永不放弃勇往直前，这是我的忍道')">一键复制</button>
@@ -194,7 +202,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">我一向有话直说，这也是我的忍道</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/ri-xiang-chu-tian/quote-312.html">我一向有话直说，这也是我的忍道</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('我一向有话直说，这也是我的忍道')">一键复制</button>
@@ -204,7 +214,7 @@
     </div>
     <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
         <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
-            <div class="quote-text" v-html="item.content"></div>
+            <div class="quote-text"  @click="window.open(item.url, '_blank')" v-html="item.content"></div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden">—— </span>
                 <button class="copy-btn" @click="copyText(item.content)">一键复制</button>
@@ -223,7 +233,7 @@
 
 
 
-    let QUOTES = '[{"id":308,"famous_id":18,"content":"我会一直保护你 就好像你当初保护我一样","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.703Z","updated_at":"2025-12-24T05:52:40.703Z","deleted_at":null},{"id":309,"famous_id":18,"content":"我无法与他并肩，但至少我要站在能看到鸣人背影的地方。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.712Z","updated_at":"2025-12-24T05:52:40.712Z","deleted_at":null},{"id":310,"famous_id":18,"content":"这个举动是我自己决定的……站在这里，是我自己的意志。以前的我就只会哭，做什么都是早早就放弃……好几次差点就要误入歧途……是鸣人你将这样的我引入了正途……我一直在追赶着鸣人你……一直想要追赶上鸣人你……一直都想和鸣人你一起并肩向前一直都想到鸣人你那里，是鸣人你改变了我，是鸣人你的笑容拯救了我，所以，如果是为了保护鸣人你的话，我毫不畏惧死亡，因为我最喜欢鸣人你了……”","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.722Z","updated_at":"2025-12-24T05:52:40.722Z","deleted_at":null},{"id":311,"famous_id":18,"content":"永不放弃勇往直前，这是我的忍道","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.734Z","updated_at":"2025-12-24T05:52:40.734Z","deleted_at":null},{"id":312,"famous_id":18,"content":"我一向有话直说，这也是我的忍道","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.743Z","updated_at":"2025-12-24T05:52:40.743Z","deleted_at":null}]';
+    let QUOTES = '[{"id":308,"famous_id":18,"content":"我会一直保护你 就好像你当初保护我一样","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.703Z","updated_at":"2025-12-24T05:52:40.703Z","deleted_at":null,"url":"https://quote.aistool.org/ri-xiang-chu-tian/quote-308.html"},{"id":309,"famous_id":18,"content":"我无法与他并肩，但至少我要站在能看到鸣人背影的地方。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.712Z","updated_at":"2025-12-24T05:52:40.712Z","deleted_at":null,"url":"https://quote.aistool.org/ri-xiang-chu-tian/quote-309.html"},{"id":310,"famous_id":18,"content":"这个举动是我自己决定的……站在这里，是我自己的意志。以前的我就只会哭，做什么都是早早就放弃……好几次差点就要误入歧途……是鸣人你将这样的我引入了正途……我一直在追赶着鸣人你……一直想要追赶上鸣人你……一直都想和鸣人你一起并肩向前一直都想到鸣人你那里，是鸣人你改变了我，是鸣人你的笑容拯救了我，所以，如果是为了保护鸣人你的话，我毫不畏惧死亡，因为我最喜欢鸣人你了……”","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.722Z","updated_at":"2025-12-24T05:52:40.722Z","deleted_at":null,"url":"https://quote.aistool.org/ri-xiang-chu-tian/quote-310.html"},{"id":311,"famous_id":18,"content":"永不放弃勇往直前，这是我的忍道","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.734Z","updated_at":"2025-12-24T05:52:40.734Z","deleted_at":null,"url":"https://quote.aistool.org/ri-xiang-chu-tian/quote-311.html"},{"id":312,"famous_id":18,"content":"我一向有话直说，这也是我的忍道","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.743Z","updated_at":"2025-12-24T05:52:40.743Z","deleted_at":null,"url":"https://quote.aistool.org/ri-xiang-chu-tian/quote-312.html"}]';
     QUOTES = JSON.parse(QUOTES)
     if (!Array.isArray(QUOTES)) {
         QUOTES = [];

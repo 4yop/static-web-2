@@ -162,7 +162,9 @@
     <div id="quotes-list-faker" ref="quotes-list-faker">
         
         <article class="quote-card">
-            <div class="quote-text">结果就跟你说的一样，忍者也是人，也许没办法成为没有感情的工具也说不定吧..</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/tao-di-zai-bu-zhan/quote-337.html">结果就跟你说的一样，忍者也是人，也许没办法成为没有感情的工具也说不定吧..</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('结果就跟你说的一样，忍者也是人，也许没办法成为没有感情的工具也说不定吧..')">一键复制</button>
@@ -170,7 +172,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">……下雪了，白，是你在哭泣吗？我们一直在一起，所以最终也想在你身旁…可能的话，真想和你…去…同一个地方……</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/tao-di-zai-bu-zhan/quote-338.html">……下雪了，白，是你在哭泣吗？我们一直在一起，所以最终也想在你身旁…可能的话，真想和你…去…同一个地方……</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('……下雪了，白，是你在哭泣吗？我们一直在一起，所以最终也想在你身旁…可能的话，真想和你…去…同一个地方……')">一键复制</button>
@@ -180,7 +184,7 @@
     </div>
     <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
         <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
-            <div class="quote-text" v-html="item.content"></div>
+            <div class="quote-text"  @click="window.open(item.url, '_blank')" v-html="item.content"></div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden">—— </span>
                 <button class="copy-btn" @click="copyText(item.content)">一键复制</button>
@@ -199,7 +203,7 @@
 
 
 
-    let QUOTES = '[{"id":337,"famous_id":25,"content":"结果就跟你说的一样，忍者也是人，也许没办法成为没有感情的工具也说不定吧..","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:41.057Z","updated_at":"2025-12-24T05:52:41.057Z","deleted_at":null},{"id":338,"famous_id":25,"content":"……下雪了，白，是你在哭泣吗？我们一直在一起，所以最终也想在你身旁…可能的话，真想和你…去…同一个地方……","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:41.069Z","updated_at":"2025-12-24T05:52:41.069Z","deleted_at":null}]';
+    let QUOTES = '[{"id":337,"famous_id":25,"content":"结果就跟你说的一样，忍者也是人，也许没办法成为没有感情的工具也说不定吧..","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:41.057Z","updated_at":"2025-12-24T05:52:41.057Z","deleted_at":null,"url":"https://quote.aistool.org/tao-di-zai-bu-zhan/quote-337.html"},{"id":338,"famous_id":25,"content":"……下雪了，白，是你在哭泣吗？我们一直在一起，所以最终也想在你身旁…可能的话，真想和你…去…同一个地方……","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:41.069Z","updated_at":"2025-12-24T05:52:41.069Z","deleted_at":null,"url":"https://quote.aistool.org/tao-di-zai-bu-zhan/quote-338.html"}]';
     QUOTES = JSON.parse(QUOTES)
     if (!Array.isArray(QUOTES)) {
         QUOTES = [];

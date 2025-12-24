@@ -162,7 +162,9 @@
     <div id="quotes-list-faker" ref="quotes-list-faker">
         
         <article class="quote-card">
-            <div class="quote-text">是男人总不能欠著女人的人情不还啊</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/nai-liang-lu-wan/quote-298.html">是男人总不能欠著女人的人情不还啊</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('是男人总不能欠著女人的人情不还啊')">一键复制</button>
@@ -170,7 +172,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">唉...我本来想过着随便当个忍者，随便赚点钱...然后和不美又不丑的普通女人结婚，生两个小孩...第一个是女孩、第二个是男孩...等长女结婚、儿子也能独当一面的时候，就从忍者的工作退休。之后...每天过着下将棋或围棋的悠闲隐居生活，然后比自己的老婆还要早老死，我就是想过这种生活。结果我却跑出来抢锋头，我真想普普通通的过完一生，事情竟然变得越来越麻烦了！</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/nai-liang-lu-wan/quote-299.html">唉...我本来想过着随便当个忍者，随便赚点钱...然后和不美又不丑的普通女人结婚，生两个小孩...第一个是女孩、第二个是男孩...等长女结婚、儿子也能独当一面的时候，就从忍者的工作退休。之后...每天过着下将棋或围棋的悠闲隐居生活，然后比自己的老婆还要早老死，我就是想过这种生活。结果我却跑出来抢锋头，我真想普普通通的过完一生，事情竟然变得越来越麻烦了！</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('唉...我本来想过着随便当个忍者，随便赚点钱...然后和不美又不丑的普通女人结婚，生两个小孩...第一个是女孩、第二个是男孩...等长女结婚、儿子也能独当一面的时候，就从忍者的工作退休。之后...每天过着下将棋或围棋的悠闲隐居生活，然后比自己的老婆还要早老死，我就是想过这种生活。结果我却跑出来抢锋头，我真想普普通通的过完一生，事情竟然变得越来越麻烦了！')">一键复制</button>
@@ -178,7 +182,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">话说男人是不能打女人的，当然也不想被打...</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/nai-liang-lu-wan/quote-300.html">话说男人是不能打女人的，当然也不想被打...</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('话说男人是不能打女人的，当然也不想被打...')">一键复制</button>
@@ -186,7 +192,9 @@
         </article>
         
         <article class="quote-card">
-            <div class="quote-text">我们也不是笨蛋，不会白白送死的，而且，就这样逃走，苟活于世的话，这种麻烦的活法不要也罢。</div>
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/nai-liang-lu-wan/quote-301.html">我们也不是笨蛋，不会白白送死的，而且，就这样逃走，苟活于世的话，这种麻烦的活法不要也罢。</a>
+            </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('我们也不是笨蛋，不会白白送死的，而且，就这样逃走，苟活于世的话，这种麻烦的活法不要也罢。')">一键复制</button>
@@ -196,7 +204,7 @@
     </div>
     <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
         <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
-            <div class="quote-text" v-html="item.content"></div>
+            <div class="quote-text"  @click="window.open(item.url, '_blank')" v-html="item.content"></div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden">—— </span>
                 <button class="copy-btn" @click="copyText(item.content)">一键复制</button>
@@ -215,7 +223,7 @@
 
 
 
-    let QUOTES = '[{"id":298,"famous_id":15,"content":"是男人总不能欠著女人的人情不还啊","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.589Z","updated_at":"2025-12-24T05:52:40.589Z","deleted_at":null},{"id":299,"famous_id":15,"content":"唉...我本来想过着随便当个忍者，随便赚点钱...然后和不美又不丑的普通女人结婚，生两个小孩...第一个是女孩、第二个是男孩...等长女结婚、儿子也能独当一面的时候，就从忍者的工作退休。之后...每天过着下将棋或围棋的悠闲隐居生活，然后比自己的老婆还要早老死，我就是想过这种生活。结果我却跑出来抢锋头，我真想普普通通的过完一生，事情竟然变得越来越麻烦了！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.598Z","updated_at":"2025-12-24T05:52:40.598Z","deleted_at":null},{"id":300,"famous_id":15,"content":"话说男人是不能打女人的，当然也不想被打...","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.607Z","updated_at":"2025-12-24T05:52:40.607Z","deleted_at":null},{"id":301,"famous_id":15,"content":"我们也不是笨蛋，不会白白送死的，而且，就这样逃走，苟活于世的话，这种麻烦的活法不要也罢。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.616Z","updated_at":"2025-12-24T05:52:40.616Z","deleted_at":null}]';
+    let QUOTES = '[{"id":298,"famous_id":15,"content":"是男人总不能欠著女人的人情不还啊","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.589Z","updated_at":"2025-12-24T05:52:40.589Z","deleted_at":null,"url":"https://quote.aistool.org/nai-liang-lu-wan/quote-298.html"},{"id":299,"famous_id":15,"content":"唉...我本来想过着随便当个忍者，随便赚点钱...然后和不美又不丑的普通女人结婚，生两个小孩...第一个是女孩、第二个是男孩...等长女结婚、儿子也能独当一面的时候，就从忍者的工作退休。之后...每天过着下将棋或围棋的悠闲隐居生活，然后比自己的老婆还要早老死，我就是想过这种生活。结果我却跑出来抢锋头，我真想普普通通的过完一生，事情竟然变得越来越麻烦了！","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.598Z","updated_at":"2025-12-24T05:52:40.598Z","deleted_at":null,"url":"https://quote.aistool.org/nai-liang-lu-wan/quote-299.html"},{"id":300,"famous_id":15,"content":"话说男人是不能打女人的，当然也不想被打...","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.607Z","updated_at":"2025-12-24T05:52:40.607Z","deleted_at":null,"url":"https://quote.aistool.org/nai-liang-lu-wan/quote-300.html"},{"id":301,"famous_id":15,"content":"我们也不是笨蛋，不会白白送死的，而且，就这样逃走，苟活于世的话，这种麻烦的活法不要也罢。","info":{},"sort":0,"page_title":"","seo_title":"","seo_keywords":"","seo_description":"","created_at":"2025-12-24T05:52:40.616Z","updated_at":"2025-12-24T05:52:40.616Z","deleted_at":null,"url":"https://quote.aistool.org/nai-liang-lu-wan/quote-301.html"}]';
     QUOTES = JSON.parse(QUOTES)
     if (!Array.isArray(QUOTES)) {
         QUOTES = [];

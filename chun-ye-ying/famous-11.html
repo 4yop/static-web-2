@@ -30,100 +30,9 @@
         }
     </script>
 
-    <script src="https://quote.aistool.org//js/flexsearch.bundle.js"></script>
-    <script src="https://quote.aistool.org//js/vue.min.js"></script>
-    <style>
-        /* --- 核心美学变量 --- */
-        :root {
-            --primary-text: #1a1a1a;
-            --secondary-text: #666;
-            --background: #fcfcfc;
-            --card-border: #e0e0e0;
-            --tag-bg: #f5f5f5;
-            --focus-color: #333;
-        }
-
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            background-color: var(--background);
-            color: var(--primary-text);
-            margin: 0; padding: 0; line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-        /* 1. 头部与导航 */
-        header { background-color: white; padding: 25px 0; border-bottom: 1px solid #eee; text-align: center; }
-        header h1 { margin: 0; font-size: 2.2em; font-weight: 300; letter-spacing: 2px; color: var(--focus-color); }
-        .breadcrumb { margin-bottom: 20px; font-size: 0.9em; color: var(--secondary-text); padding-top: 20px;}
-        .breadcrumb a { color: var(--focus-color); text-decoration: none; }
-        .breadcrumb a:hover { text-decoration: underline; }
-
-        /* 2. 页面标题 */
-        .page-header { text-align: center; margin: 40px 0; }
-        .page-title { font-size: 2.5em; font-weight: 700; margin-bottom: 10px; color: var(--primary-text); }
-        .author-bio { color: var(--secondary-text); font-style: italic; max-width: 700px; margin: 0 auto; }
-
-        /* 3. 搜索与筛选工具栏 */
-        #filter-toolbox {
-            background-color: white;
-            padding: 25px;
-            border: 1px solid var(--card-border);
-            border-radius: 8px;
-            margin-bottom: 40px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-        }
-        .filter-group label { display: block; font-weight: 600; margin-bottom: 10px; color: var(--secondary-text); font-size: 0.8em; text-transform: uppercase; letter-spacing: 1px; }
-        #search-input {
-            width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 4px; font-size: 1em; outline: none; transition: all 0.3s; box-sizing: border-box;
-        }
-        #search-input:focus { border-color: var(--focus-color); box-shadow: 0 0 0 3px rgba(0,0,0,0.05); }
-
-        .tag {
-            display: inline-block; background-color: var(--tag-bg); color: var(--secondary-text);
-            padding: 6px 14px; border-radius: 4px; margin: 5px 6px 5px 0; font-size: 0.85em;
-            cursor: pointer; transition: all 0.2s; border: 1px solid transparent; user-select: none;
-        }
-        .tag.selected { background-color: var(--focus-color); color: white; }
-        .tag:hover:not(.selected) { background-color: #eee; }
-
-        /* 4. 语录卡片布局 (Masonry-like Grid) */
-        #quotes-list,#quotes-list-faker {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-        }
-        .quote-card {
-            background-color: white; padding: 35px; border-radius: 12px; border: 1px solid var(--card-border);
-            position: relative; overflow: hidden; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex; flex-direction: column; justify-content: space-between;
-        }
-        .quote-card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.06); border-color: #ccc; }
-        .quote-card::before {
-            content: "“"; position: absolute; top: -15px; left: 10px; font-size: 8em; color: #f7f7f7; font-family: serif; z-index: 0;
-        }
-        .quote-text { font-size: 1.15em; position: relative; z-index: 1; margin-bottom: 25px; color: var(--primary-text); }
-
-        .quote-footer {
-            display: flex; justify-content: space-between; align-items: center;
-            border-top: 1px solid #f9f9f9; padding-top: 15px; z-index: 1;
-        }
-        .quote-source { font-size: 0.85em; color: var(--secondary-text); font-style: italic; }
-
-        .copy-btn {
-            background: none; border: 1px solid var(--focus-color); color: var(--focus-color);
-            padding: 6px 16px; border-radius: 20px; cursor: pointer; font-size: 0.8em; font-weight: 600; transition: all 0.2s;
-        }
-        .copy-btn:hover { background-color: var(--focus-color); color: white; }
-
-        /* 5. 广告位 */
-        .ad-banner { background-color: #f9f9f9; border: 1px dashed #ddd; text-align: center; padding: 15px; margin: 30px 0; color: #999; font-size: 0.85em; border-radius: 4px; min-height: 60px; display: flex; align-items: center; justify-content: center; }
-
-        @media (max-width: 768px) {
-            #quotes-list,#quotes-list-faker { grid-template-columns: 1fr; }
-            .page-title { font-size: 2em; }
-        }
-    </style>
+    <script src="https://quote.aistool.org//js/flexsearch.bundle.js?v=6501"></script>
+    <script src="https://quote.aistool.org//js/vue.min.js?v=6501"></script>
+    <link rel="stylesheet" href="https://quote.aistool.org//style/famous-quotes.css?v=6501">
 </head>
 <body>
 
@@ -173,16 +82,6 @@
         
         <article class="quote-card">
             <div class="quote-text">
-                <a target="_blank"  href="https://quote.aistool.org/chun-ye-ying/quote-260.html">鸣人他虽然比你笨，而且经常碍手碍脚，但是他至少不是个胆小鬼，对不对？</a>
-            </div>
-            <div class="quote-footer">
-                <span class="quote-source" style="visibility: hidden;">—— </span>
-                <button class="copy-btn" onclick="copyText('鸣人他虽然比你笨，而且经常碍手碍脚，但是他至少不是个胆小鬼，对不对？')">一键复制</button>
-            </div>
-        </article>
-        
-        <article class="quote-card">
-            <div class="quote-text">
                 <a target="_blank"  href="https://quote.aistool.org/chun-ye-ying/quote-257.html">对不起，鸣人。要让你稍微等我一阵了，下一次，我一定不会拖后腿的。</a>
             </div>
             <div class="quote-footer">
@@ -193,41 +92,11 @@
         
         <article class="quote-card">
             <div class="quote-text">
-                <a target="_blank"  href="https://quote.aistool.org/chun-ye-ying/quote-261.html">女孩子不够坚强的话，是不能够活下去的啊。</a>
+                <a target="_blank"  href="https://quote.aistool.org/chun-ye-ying/quote-260.html">鸣人他虽然比你笨，而且经常碍手碍脚，但是他至少不是个胆小鬼，对不对？</a>
             </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
-                <button class="copy-btn" onclick="copyText('女孩子不够坚强的话，是不能够活下去的啊。')">一键复制</button>
-            </div>
-        </article>
-        
-        <article class="quote-card">
-            <div class="quote-text">
-                <a target="_blank"  href="https://quote.aistool.org/chun-ye-ying/quote-262.html">这次一定，全力以赴，堂堂正正，一决胜负！</a>
-            </div>
-            <div class="quote-footer">
-                <span class="quote-source" style="visibility: hidden;">—— </span>
-                <button class="copy-btn" onclick="copyText('这次一定，全力以赴，堂堂正正，一决胜负！')">一键复制</button>
-            </div>
-        </article>
-        
-        <article class="quote-card">
-            <div class="quote-text">
-                <a target="_blank"  href="https://quote.aistool.org/chun-ye-ying/quote-267.html">我一直犯错，一直失败，我再也不想犯错……再也不想失败。</a>
-            </div>
-            <div class="quote-footer">
-                <span class="quote-source" style="visibility: hidden;">—— </span>
-                <button class="copy-btn" onclick="copyText('我一直犯错，一直失败，我再也不想犯错……再也不想失败。')">一键复制</button>
-            </div>
-        </article>
-        
-        <article class="quote-card">
-            <div class="quote-text">
-                <a target="_blank"  href="https://quote.aistool.org/chun-ye-ying/quote-258.html">保护他们，就是自己生命的意义。</a>
-            </div>
-            <div class="quote-footer">
-                <span class="quote-source" style="visibility: hidden;">—— </span>
-                <button class="copy-btn" onclick="copyText('保护他们，就是自己生命的意义。')">一键复制</button>
+                <button class="copy-btn" onclick="copyText('鸣人他虽然比你笨，而且经常碍手碍脚，但是他至少不是个胆小鬼，对不对？')">一键复制</button>
             </div>
         </article>
         
@@ -243,11 +112,21 @@
         
         <article class="quote-card">
             <div class="quote-text">
-                <a target="_blank"  href="https://quote.aistool.org/chun-ye-ying/quote-265.html">你不用原谅我也没有关系，我要用我的力量来阻止佐助！</a>
+                <a target="_blank"  href="https://quote.aistool.org/chun-ye-ying/quote-264.html">我想您也应该明白了，我的性格。</a>
             </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
-                <button class="copy-btn" onclick="copyText('你不用原谅我也没有关系，我要用我的力量来阻止佐助！')">一键复制</button>
+                <button class="copy-btn" onclick="copyText('我想您也应该明白了，我的性格。')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/chun-ye-ying/quote-258.html">保护他们，就是自己生命的意义。</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('保护他们，就是自己生命的意义。')">一键复制</button>
             </div>
         </article>
         
@@ -258,6 +137,36 @@
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
                 <button class="copy-btn" onclick="copyText('纲手大人，我终于追上他们了。')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/chun-ye-ying/quote-265.html">你不用原谅我也没有关系，我要用我的力量来阻止佐助！</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('你不用原谅我也没有关系，我要用我的力量来阻止佐助！')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/chun-ye-ying/quote-267.html">我一直犯错，一直失败，我再也不想犯错……再也不想失败。</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('我一直犯错，一直失败，我再也不想犯错……再也不想失败。')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/chun-ye-ying/quote-261.html">女孩子不够坚强的话，是不能够活下去的啊。</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('女孩子不够坚强的话，是不能够活下去的啊。')">一键复制</button>
             </div>
         </article>
         

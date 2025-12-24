@@ -30,100 +30,9 @@
         }
     </script>
 
-    <script src="https://quote.aistool.org//js/flexsearch.bundle.js"></script>
-    <script src="https://quote.aistool.org//js/vue.min.js"></script>
-    <style>
-        /* --- 核心美学变量 --- */
-        :root {
-            --primary-text: #1a1a1a;
-            --secondary-text: #666;
-            --background: #fcfcfc;
-            --card-border: #e0e0e0;
-            --tag-bg: #f5f5f5;
-            --focus-color: #333;
-        }
-
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            background-color: var(--background);
-            color: var(--primary-text);
-            margin: 0; padding: 0; line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-        /* 1. 头部与导航 */
-        header { background-color: white; padding: 25px 0; border-bottom: 1px solid #eee; text-align: center; }
-        header h1 { margin: 0; font-size: 2.2em; font-weight: 300; letter-spacing: 2px; color: var(--focus-color); }
-        .breadcrumb { margin-bottom: 20px; font-size: 0.9em; color: var(--secondary-text); padding-top: 20px;}
-        .breadcrumb a { color: var(--focus-color); text-decoration: none; }
-        .breadcrumb a:hover { text-decoration: underline; }
-
-        /* 2. 页面标题 */
-        .page-header { text-align: center; margin: 40px 0; }
-        .page-title { font-size: 2.5em; font-weight: 700; margin-bottom: 10px; color: var(--primary-text); }
-        .author-bio { color: var(--secondary-text); font-style: italic; max-width: 700px; margin: 0 auto; }
-
-        /* 3. 搜索与筛选工具栏 */
-        #filter-toolbox {
-            background-color: white;
-            padding: 25px;
-            border: 1px solid var(--card-border);
-            border-radius: 8px;
-            margin-bottom: 40px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-        }
-        .filter-group label { display: block; font-weight: 600; margin-bottom: 10px; color: var(--secondary-text); font-size: 0.8em; text-transform: uppercase; letter-spacing: 1px; }
-        #search-input {
-            width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 4px; font-size: 1em; outline: none; transition: all 0.3s; box-sizing: border-box;
-        }
-        #search-input:focus { border-color: var(--focus-color); box-shadow: 0 0 0 3px rgba(0,0,0,0.05); }
-
-        .tag {
-            display: inline-block; background-color: var(--tag-bg); color: var(--secondary-text);
-            padding: 6px 14px; border-radius: 4px; margin: 5px 6px 5px 0; font-size: 0.85em;
-            cursor: pointer; transition: all 0.2s; border: 1px solid transparent; user-select: none;
-        }
-        .tag.selected { background-color: var(--focus-color); color: white; }
-        .tag:hover:not(.selected) { background-color: #eee; }
-
-        /* 4. 语录卡片布局 (Masonry-like Grid) */
-        #quotes-list,#quotes-list-faker {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-        }
-        .quote-card {
-            background-color: white; padding: 35px; border-radius: 12px; border: 1px solid var(--card-border);
-            position: relative; overflow: hidden; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex; flex-direction: column; justify-content: space-between;
-        }
-        .quote-card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.06); border-color: #ccc; }
-        .quote-card::before {
-            content: "“"; position: absolute; top: -15px; left: 10px; font-size: 8em; color: #f7f7f7; font-family: serif; z-index: 0;
-        }
-        .quote-text { font-size: 1.15em; position: relative; z-index: 1; margin-bottom: 25px; color: var(--primary-text); }
-
-        .quote-footer {
-            display: flex; justify-content: space-between; align-items: center;
-            border-top: 1px solid #f9f9f9; padding-top: 15px; z-index: 1;
-        }
-        .quote-source { font-size: 0.85em; color: var(--secondary-text); font-style: italic; }
-
-        .copy-btn {
-            background: none; border: 1px solid var(--focus-color); color: var(--focus-color);
-            padding: 6px 16px; border-radius: 20px; cursor: pointer; font-size: 0.8em; font-weight: 600; transition: all 0.2s;
-        }
-        .copy-btn:hover { background-color: var(--focus-color); color: white; }
-
-        /* 5. 广告位 */
-        .ad-banner { background-color: #f9f9f9; border: 1px dashed #ddd; text-align: center; padding: 15px; margin: 30px 0; color: #999; font-size: 0.85em; border-radius: 4px; min-height: 60px; display: flex; align-items: center; justify-content: center; }
-
-        @media (max-width: 768px) {
-            #quotes-list,#quotes-list-faker { grid-template-columns: 1fr; }
-            .page-title { font-size: 2em; }
-        }
-    </style>
+    <script src="https://quote.aistool.org//js/flexsearch.bundle.js?v=7664"></script>
+    <script src="https://quote.aistool.org//js/vue.min.js?v=7664"></script>
+    <link rel="stylesheet" href="https://quote.aistool.org//style/famous-quotes.css?v=7664">
 </head>
 <body>
 
@@ -163,51 +72,11 @@
         
         <article class="quote-card">
             <div class="quote-text">
-                <a target="_blank"  href="https://quote.aistool.org/yu-zhi-bo-you/quote-180.html">优秀也是有烦恼的，有了力量就会被人孤立，也会变得傲慢起来，就算刚开始时被寄予了最大的期望。佐助，你是我这世上唯一的兄弟，我会作为你必须超越的障碍而存在下去，持续存在于这个世上，就算是被你憎恨也是一样，这就是所谓的兄长。</a>
+                <a target="_blank"  href="https://quote.aistool.org/yu-zhi-bo-you/quote-193.html">总有一天我弟弟会来到这里，那时请你使出全力做他的对手。以你的力量，现在我弟弟还不是你的对手。所谓成长就是超越自己的极限，要注意到这一点，也算修行。</a>
             </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
-                <button class="copy-btn" onclick="copyText('优秀也是有烦恼的，有了力量就会被人孤立，也会变得傲慢起来，就算刚开始时被寄予了最大的期望。佐助，你是我这世上唯一的兄弟，我会作为你必须超越的障碍而存在下去，持续存在于这个世上，就算是被你憎恨也是一样，这就是所谓的兄长。')">一键复制</button>
-            </div>
-        </article>
-        
-        <article class="quote-card">
-            <div class="quote-text">
-                <a target="_blank"  href="https://quote.aistool.org/yu-zhi-bo-you/quote-179.html">只要是人都是依靠自己的知识与认知并且被之束缚生活着的，那就叫做现实。但是知识与认知是很暧昧的东西，现实也许只是镜花水月，人都是活在自己的执念中的。</a>
-            </div>
-            <div class="quote-footer">
-                <span class="quote-source" style="visibility: hidden;">—— </span>
-                <button class="copy-btn" onclick="copyText('只要是人都是依靠自己的知识与认知并且被之束缚生活着的，那就叫做现实。但是知识与认知是很暧昧的东西，现实也许只是镜花水月，人都是活在自己的执念中的。')">一键复制</button>
-            </div>
-        </article>
-        
-        <article class="quote-card">
-            <div class="quote-text">
-                <a target="_blank"  href="https://quote.aistool.org/yu-zhi-bo-you/quote-198.html">我既然做出了决定，就必须承担所有。</a>
-            </div>
-            <div class="quote-footer">
-                <span class="quote-source" style="visibility: hidden;">—— </span>
-                <button class="copy-btn" onclick="copyText('我既然做出了决定，就必须承担所有。')">一键复制</button>
-            </div>
-        </article>
-        
-        <article class="quote-card">
-            <div class="quote-text">
-                <a target="_blank"  href="https://quote.aistool.org/yu-zhi-bo-you/quote-194.html">也许无论何事何物，单一的存在都无法靠自己的力量到达完美吧；所以才会有能弥补自己的东西诞生，并来到身边。我觉得，万物在遇到与自己对立的存在之后，才能逐渐开始良性发展的。</a>
-            </div>
-            <div class="quote-footer">
-                <span class="quote-source" style="visibility: hidden;">—— </span>
-                <button class="copy-btn" onclick="copyText('也许无论何事何物，单一的存在都无法靠自己的力量到达完美吧；所以才会有能弥补自己的东西诞生，并来到身边。我觉得，万物在遇到与自己对立的存在之后，才能逐渐开始良性发展的。')">一键复制</button>
-            </div>
-        </article>
-        
-        <article class="quote-card">
-            <div class="quote-text">
-                <a target="_blank"  href="https://quote.aistool.org/yu-zhi-bo-you/quote-197.html">“‘秽土转生’，你竟然带出这种无聊的禁术。‘秽土转生’无法连人心都操控，你亵渎了已被净化的灵魂，不停散播着不必要的痛苦与憎恶。忍者们战斗时的心情，你能了解吗？还活着的人就更不用说了。人们好不容易跨越了叹息和悲哀，你却用术令他们死灰复燃！”</a>
-            </div>
-            <div class="quote-footer">
-                <span class="quote-source" style="visibility: hidden;">—— </span>
-                <button class="copy-btn" onclick="copyText('“‘秽土转生’，你竟然带出这种无聊的禁术。‘秽土转生’无法连人心都操控，你亵渎了已被净化的灵魂，不停散播着不必要的痛苦与憎恶。忍者们战斗时的心情，你能了解吗？还活着的人就更不用说了。人们好不容易跨越了叹息和悲哀，你却用术令他们死灰复燃！”')">一键复制</button>
+                <button class="copy-btn" onclick="copyText('总有一天我弟弟会来到这里，那时请你使出全力做他的对手。以你的力量，现在我弟弟还不是你的对手。所谓成长就是超越自己的极限，要注意到这一点，也算修行。')">一键复制</button>
             </div>
         </article>
         
@@ -223,11 +92,51 @@
         
         <article class="quote-card">
             <div class="quote-text">
-                <a target="_blank"  href="https://quote.aistool.org/yu-zhi-bo-you/quote-192.html">那些对自己同伴刀剑相向的人都会死的很惨……我们不知道我们到底是什么样的人，直到我们死前的那一刻，但当死亡降临的时候你就会了解真正的你，这就是死亡的意义你不这么觉得吗?</a>
+                <a target="_blank"  href="https://quote.aistool.org/yu-zhi-bo-you/quote-198.html">我既然做出了决定，就必须承担所有。</a>
             </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
-                <button class="copy-btn" onclick="copyText('那些对自己同伴刀剑相向的人都会死的很惨……我们不知道我们到底是什么样的人，直到我们死前的那一刻，但当死亡降临的时候你就会了解真正的你，这就是死亡的意义你不这么觉得吗?')">一键复制</button>
+                <button class="copy-btn" onclick="copyText('我既然做出了决定，就必须承担所有。')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/yu-zhi-bo-you/quote-182.html">你也是和我一样可以让写轮眼开眼的人，但必须有条件……那就是杀死自己最亲密的朋友！</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('你也是和我一样可以让写轮眼开眼的人，但必须有条件……那就是杀死自己最亲密的朋友！')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/yu-zhi-bo-you/quote-196.html">每个忍术都存在着破绽，而这个术的破绽就是我的存在。</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('每个忍术都存在着破绽，而这个术的破绽就是我的存在。')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/yu-zhi-bo-you/quote-199.html">为你背负，是我的全部。</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('为你背负，是我的全部。')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/yu-zhi-bo-you/quote-183.html">为什么你会这么弱？就是因为你对我的仇恨...还不够深...</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('为什么你会这么弱？就是因为你对我的仇恨...还不够深...')">一键复制</button>
             </div>
         </article>
         
@@ -253,11 +162,11 @@
         
         <article class="quote-card">
             <div class="quote-text">
-                <a target="_blank"  href="https://quote.aistool.org/yu-zhi-bo-you/quote-181.html">一族一族，只惦记一族的你们太高估自己的实力，对未来看不见的恐怖而置之不理，低估我的力量所以才会躺在这里。......我的能力，对这无聊的一族感到绝望！</a>
+                <a target="_blank"  href="https://quote.aistool.org/yu-zhi-bo-you/quote-190.html">还是不要仅凭外表和印象就判断一个人比较好。</a>
             </div>
             <div class="quote-footer">
                 <span class="quote-source" style="visibility: hidden;">—— </span>
-                <button class="copy-btn" onclick="copyText('一族一族，只惦记一族的你们太高估自己的实力，对未来看不见的恐怖而置之不理，低估我的力量所以才会躺在这里。......我的能力，对这无聊的一族感到绝望！')">一键复制</button>
+                <button class="copy-btn" onclick="copyText('还是不要仅凭外表和印象就判断一个人比较好。')">一键复制</button>
             </div>
         </article>
         

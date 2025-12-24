@@ -30,9 +30,9 @@
         }
     </script>
 
-    <script src="https://quote.aistool.org//js/flexsearch.bundle.js?v=2861"></script>
-    <script src="https://quote.aistool.org//js/vue.min.js?v=2861"></script>
-    <link rel="stylesheet" href="https://quote.aistool.org//css/famous-quotes.css?v=2861">
+    <script src="https://quote.aistool.org//js/flexsearch.bundle.js?v=7412"></script>
+    <script src="https://quote.aistool.org//js/vue.min.js?v=7412"></script>
+    <link rel="stylesheet" href="https://quote.aistool.org//css/famous-quotes.css?v=7412">
 </head>
 <body>
 
@@ -63,10 +63,10 @@
             <label>搜索</label>
             <input type="text" id="search-input" v-model.trim="searchInput"  placeholder="输入关键词查找，例如：失败、员工、机会...">
         </div>
-        <div class="filter-group" style="margin-top: 25px;">
-            <label>主题标签 (Topics)</label>
-            <div id="tag-container"></div>
-        </div>
+<!--        <div class="filter-group" style="margin-top: 25px;">-->
+<!--            <label>主题标签 (Topics)</label>-->
+<!--            <div id="tag-container"></div>-->
+<!--        </div>-->
     </section>
     <div id="quotes-list-faker" ref="quotes-list-faker">
         
@@ -108,7 +108,9 @@
     <p>&copy; 2025 灵感语录库. 记录时代的声音。</p>
 </footer>
 
-<script>
+</body>
+</html>
+<script async>
 
 
 
@@ -147,10 +149,10 @@
                 console.log(this.searchInput)
                 if (!this.searchInput) return this.quotes;
 
-                 const res = this.quotes.filter((item)=>{
-                        const res= item.content && item.content.includes(this.searchInput)
-                        return res;
-                    });
+                const res = this.quotes.filter((item)=>{
+                    const res= item.content && item.content.includes(this.searchInput)
+                    return res;
+                });
                 return res
             }
         },
@@ -161,8 +163,3 @@
         },
     });
 </script>
-
-
-
-</body>
-</html>

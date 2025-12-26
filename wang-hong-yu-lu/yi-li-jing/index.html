@@ -79,16 +79,6 @@
     </section>
     <div id="quotes-list-faker" ref="quotes-list-faker">
         
-        <article class="quote-card">
-            <div class="quote-text">
-                <a target="_blank"  href="https://quote.aistool.org/wang-hong-yu-lu/yi-li-jing/quote-600.html">人生不是轨道，是旷野。</a>
-            </div>
-            <div class="quote-footer">
-                <span class="quote-source" style="visibility: hidden;">—— </span>
-                <button class="copy-btn" onclick="copyText('人生不是轨道，是旷野。')">一键复制</button>
-            </div>
-        </article>
-        
     </div>
     <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
         <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
@@ -113,7 +103,7 @@
 
 
 
-    let QUOTES = '[{"content":"人生不是轨道，是旷野。","url":"https://quote.aistool.org/wang-hong-yu-lu/yi-li-jing/quote-600.html"}]';
+    let QUOTES = '[]';
     QUOTES = JSON.parse(QUOTES)
     if (!Array.isArray(QUOTES)) {
         QUOTES = [];

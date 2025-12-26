@@ -99,6 +99,16 @@
             </div>
         </article>
         
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/dian-ying-yu-wen-xue-tai-ci/an-di-·-du-fo-lan/quote-385.html">希望是件好东西，也许是最好的东西，而好东西永远不会消逝。</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('希望是件好东西，也许是最好的东西，而好东西永远不会消逝。')">一键复制</button>
+            </div>
+        </article>
+        
     </div>
     <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
         <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
@@ -123,7 +133,7 @@
 
 
 
-    let QUOTES = '[{"content":"要么忙着活，要么忙着死。","url":"https://quote.aistool.org/dian-ying-yu-wen-xue-tai-ci/an-di-·-du-fo-lan/quote-356.html"},{"content":"记住，希望是个好东西，也许是世间最好的东西，而好东西永远不会消逝。","url":"https://quote.aistool.org/dian-ying-yu-wen-xue-tai-ci/an-di-·-du-fo-lan/quote-357.html"}]';
+    let QUOTES = '[{"content":"要么忙着活，要么忙着死。","url":"https://quote.aistool.org/dian-ying-yu-wen-xue-tai-ci/an-di-·-du-fo-lan/quote-356.html"},{"content":"记住，希望是个好东西，也许是世间最好的东西，而好东西永远不会消逝。","url":"https://quote.aistool.org/dian-ying-yu-wen-xue-tai-ci/an-di-·-du-fo-lan/quote-357.html"},{"content":"希望是件好东西，也许是最好的东西，而好东西永远不会消逝。","url":"https://quote.aistool.org/dian-ying-yu-wen-xue-tai-ci/an-di-·-du-fo-lan/quote-385.html"}]';
     QUOTES = JSON.parse(QUOTES)
     if (!Array.isArray(QUOTES)) {
         QUOTES = [];

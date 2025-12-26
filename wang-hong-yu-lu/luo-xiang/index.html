@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>罗翔语录精选｜刑法学教授的哲思金句与网红热评 | 罗翔经典语录</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="title" content="罗翔经典语录大全｜法律人的清醒、幽默与人文温度｜网红语录" />
+    <meta name="keywords" content="罗翔语录,罗翔金句,罗翔名言,网红语录,刑法学教授语录,罗翔励志句子,法律人语录" />
+
+    <meta name="description" content="汇集罗翔老师最具传播力与思想深度的经典语录——从刑法课堂金句到B站破圈热评，涵盖正义、自由、人性、读书与自省等主题，真实、深刻、有温度。">
+
+
+    <meta name="google-adsense-account" content="ca-pub-8982726393306273">
+    <meta name="baidu-site-verification" content="codeva-xEZKfvoDNR" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3CPK6GJ06E"></script>
+    <script>
+
+
+        if (['famous.aistool.com'].includes(window.location.hostname))
+        {
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'G-3CPK6GJ06E');
+        } else {
+            // 在 localhost 或其他测试域名下，只初始化 gtag 函数，但不发送数据
+            console.log(`[GA4 DEV MODE] GA tracking is disabled on: ${window.location.hostname}`);
+        }
+    </script>
+
+    <script src="https://quote.aistool.org//js/flexsearch.bundle.js?v=1"></script>
+    <script src="https://quote.aistool.org//js/vue.min.js?v=1"></script>
+    <link rel="stylesheet" href="https://quote.aistool.org//css/famous-quotes.css?v=1">
+</head>
+<body>
+
+<script>
+
+</script>
+
+<header>
+    <div class="container">
+        <h1>灵感语录库</h1>
+    </div>
+</header>
+
+<main class="container" id="app">
+    <nav class="breadcrumb">
+        <a href="https://quote.aistool.org/">首页</a> &gt;
+        
+        <a href="https://quote.aistool.org/wang-hong-yu-lu/">网红语录</a> &gt;
+        
+        <a href="https://quote.aistool.org/wang-hong-yu-lu/luo-xiang//index.html">罗翔</a> &gt;
+        
+    </nav>
+
+    <section class="page-header">
+        <h2 class="page-title">罗翔经典语录</h2>
+        <p class="author-bio">以通俗语言讲授艰深法律，兼具理性思辨与人文关怀；风格幽默犀利、充满哲学反思，因网络课程走红成为现象级知识型网红。</p>
+    </section>
+
+    <div class="ad-banner">[Ad Placeholder: Top Banner]</div>
+
+    <section id="filter-toolbox">
+        <div class="filter-group">
+            <label>搜索</label>
+            <input type="text" id="search-input" v-model.trim="searchInput"  placeholder="输入关键词查找，例如：失败、员工、机会...">
+        </div>
+<!--        <div class="filter-group" style="margin-top: 25px;">-->
+<!--            <label>主题标签 (Topics)</label>-->
+<!--            <div id="tag-container"></div>-->
+<!--        </div>-->
+    </section>
+    <div id="quotes-list-faker" ref="quotes-list-faker">
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/wang-hong-yu-lu/luo-xiang/quote-591.html">我们登上并非我们所选择的舞台，演出并非我们所选择的剧本。</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('我们登上并非我们所选择的舞台，演出并非我们所选择的剧本。')">一键复制</button>
+            </div>
+        </article>
+        
+    </div>
+    <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
+        <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
+            <div class="quote-text"  @click="window.open(item.url, '_blank')" v-html="item.content"></div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden">—— </span>
+                <button class="copy-btn" @click="copyText(item.content)">一键复制</button>
+            </div>
+        </article>
+    </div>
+
+    <div class="ad-banner">[Ad Placeholder: Bottom Banner]</div>
+</main>
+
+<footer style="text-align: center; color: var(--secondary-text); padding: 50px 0; border-top: 1px solid #eee; margin-top: 50px; font-size: 0.9em;">
+    <p>&copy; 2025 灵感语录库. 记录时代的声音。</p>
+</footer>
+
+</body>
+</html>
+<script async>
+
+
+
+    let QUOTES = '[{"content":"我们登上并非我们所选择的舞台，演出并非我们所选择的剧本。","url":"https://quote.aistool.org/wang-hong-yu-lu/luo-xiang/quote-591.html"}]';
+    QUOTES = JSON.parse(QUOTES)
+    if (!Array.isArray(QUOTES)) {
+        QUOTES = [];
+    }
+    function copyText(text){
+        navigator.clipboard.writeText(text).then(() => {
+            alert('复制成功！');
+        });
+    }
+
+    var app = new Vue({
+        el : '#app',
+        data() {
+            return {
+                quotes : QUOTES,
+                searchInput : '',
+
+            }
+        },
+        created() {
+
+        },
+        mounted() {
+            if (this.$refs['quotes-list-faker']) {
+                this.$refs['quotes-list-faker'].remove();
+            }
+
+        },
+        computed: {
+            filteredQuotes() {
+
+                console.log(this.searchInput)
+                if (!this.searchInput) return this.quotes;
+
+                const res = this.quotes.filter((item)=>{
+                    const res= item.content && item.content.includes(this.searchInput)
+                    return res;
+                });
+                return res
+            }
+        },
+        methods : {
+            copyText(text){
+                copyText(text);
+            }
+        },
+    });
+</script>

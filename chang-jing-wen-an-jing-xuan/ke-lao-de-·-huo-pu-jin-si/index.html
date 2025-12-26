@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <title> | 阿甘经典语录</title>
+    <title> | 克劳德·霍普金斯经典语录</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -56,12 +56,12 @@
         
         <a href="https://quote.aistool.org/chang-jing-wen-an-jing-xuan/">场景文案精选</a> &gt;
         
-        <a href="https://quote.aistool.org/chang-jing-wen-an-jing-xuan/a-gan//index.html">阿甘</a> &gt;
+        <a href="https://quote.aistool.org/chang-jing-wen-an-jing-xuan/ke-lao-de-·-huo-pu-jin-si//index.html">克劳德·霍普金斯</a> &gt;
         
     </nav>
 
     <section class="page-header">
-        <h2 class="page-title">阿甘经典语录</h2>
+        <h2 class="page-title">克劳德·霍普金斯经典语录</h2>
         <p class="author-bio"></p>
     </section>
 
@@ -78,6 +78,16 @@
 <!--        </div>-->
     </section>
     <div id="quotes-list-faker" ref="quotes-list-faker">
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/chang-jing-wen-an-jing-xuan/ke-lao-de-·-huo-pu-jin-si/quote-369.html">广告是印刷版的推销术。</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('广告是印刷版的推销术。')">一键复制</button>
+            </div>
+        </article>
         
     </div>
     <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
@@ -103,7 +113,7 @@
 
 
 
-    let QUOTES = '[]';
+    let QUOTES = '[{"content":"广告是印刷版的推销术。","url":"https://quote.aistool.org/chang-jing-wen-an-jing-xuan/ke-lao-de-·-huo-pu-jin-si/quote-369.html"}]';
     QUOTES = JSON.parse(QUOTES)
     if (!Array.isArray(QUOTES)) {
         QUOTES = [];

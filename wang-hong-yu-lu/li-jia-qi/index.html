@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <title> | 阿甘经典语录</title>
+    <title> | 李佳琦经典语录</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -54,14 +54,14 @@
     <nav class="breadcrumb">
         <a href="https://quote.aistool.org/">首页</a> &gt;
         
-        <a href="https://quote.aistool.org/chang-jing-wen-an-jing-xuan/">场景文案精选</a> &gt;
+        <a href="https://quote.aistool.org/wang-hong-yu-lu/">网红语录</a> &gt;
         
-        <a href="https://quote.aistool.org/chang-jing-wen-an-jing-xuan/a-gan//index.html">阿甘</a> &gt;
+        <a href="https://quote.aistool.org/wang-hong-yu-lu/li-jia-qi//index.html">李佳琦</a> &gt;
         
     </nav>
 
     <section class="page-header">
-        <h2 class="page-title">阿甘经典语录</h2>
+        <h2 class="page-title">李佳琦经典语录</h2>
         <p class="author-bio"></p>
     </section>
 
@@ -78,6 +78,26 @@
 <!--        </div>-->
     </section>
     <div id="quotes-list-faker" ref="quotes-list-faker">
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/wang-hong-yu-lu/li-jia-qi/quote-372.html">所有女生，买它！</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('所有女生，买它！')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/wang-hong-yu-lu/li-jia-qi/quote-378.html">所有女生，你们的魔鬼来咯！</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('所有女生，你们的魔鬼来咯！')">一键复制</button>
+            </div>
+        </article>
         
     </div>
     <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
@@ -103,7 +123,7 @@
 
 
 
-    let QUOTES = '[]';
+    let QUOTES = '[{"content":"所有女生，买它！","url":"https://quote.aistool.org/wang-hong-yu-lu/li-jia-qi/quote-372.html"},{"content":"所有女生，你们的魔鬼来咯！","url":"https://quote.aistool.org/wang-hong-yu-lu/li-jia-qi/quote-378.html"}]';
     QUOTES = JSON.parse(QUOTES)
     if (!Array.isArray(QUOTES)) {
         QUOTES = [];

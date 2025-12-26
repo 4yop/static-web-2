@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <title> | 阿甘经典语录</title>
+    <title> | 小王子经典语录</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -54,14 +54,14 @@
     <nav class="breadcrumb">
         <a href="https://quote.aistool.org/">首页</a> &gt;
         
-        <a href="https://quote.aistool.org/chang-jing-wen-an-jing-xuan/">场景文案精选</a> &gt;
+        <a href="https://quote.aistool.org/dian-ying-yu-wen-xue-tai-ci/">电影与文学台词</a> &gt;
         
-        <a href="https://quote.aistool.org/chang-jing-wen-an-jing-xuan/a-gan//index.html">阿甘</a> &gt;
+        <a href="https://quote.aistool.org/dian-ying-yu-wen-xue-tai-ci/xiao-wang-zi//index.html">小王子</a> &gt;
         
     </nav>
 
     <section class="page-header">
-        <h2 class="page-title">阿甘经典语录</h2>
+        <h2 class="page-title">小王子经典语录</h2>
         <p class="author-bio"></p>
     </section>
 
@@ -78,6 +78,16 @@
 <!--        </div>-->
     </section>
     <div id="quotes-list-faker" ref="quotes-list-faker">
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/dian-ying-yu-wen-xue-tai-ci/xiao-wang-zi/quote-377.html">真正重要的东西，用眼睛是看不见的。</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('真正重要的东西，用眼睛是看不见的。')">一键复制</button>
+            </div>
+        </article>
         
     </div>
     <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
@@ -103,7 +113,7 @@
 
 
 
-    let QUOTES = '[]';
+    let QUOTES = '[{"content":"真正重要的东西，用眼睛是看不见的。","url":"https://quote.aistool.org/dian-ying-yu-wen-xue-tai-ci/xiao-wang-zi/quote-377.html"}]';
     QUOTES = JSON.parse(QUOTES)
     if (!Array.isArray(QUOTES)) {
         QUOTES = [];

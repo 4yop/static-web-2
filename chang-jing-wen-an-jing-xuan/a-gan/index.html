@@ -79,6 +79,16 @@
     </section>
     <div id="quotes-list-faker" ref="quotes-list-faker">
         
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/chang-jing-wen-an-jing-xuan/a-gan/quote-1025.html">生活就像一盒巧克力，你永远不知道下一块会是什么味道。</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('生活就像一盒巧克力，你永远不知道下一块会是什么味道。')">一键复制</button>
+            </div>
+        </article>
+        
     </div>
     <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
         <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
@@ -103,7 +113,7 @@
 
 
 
-    let QUOTES = '[]';
+    let QUOTES = '[{"content":"生活就像一盒巧克力，你永远不知道下一块会是什么味道。","url":"https://quote.aistool.org/chang-jing-wen-an-jing-xuan/a-gan/quote-1025.html"}]';
     QUOTES = JSON.parse(QUOTES)
     if (!Array.isArray(QUOTES)) {
         QUOTES = [];

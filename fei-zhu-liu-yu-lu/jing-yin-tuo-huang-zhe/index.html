@@ -99,6 +99,16 @@
             </div>
         </article>
         
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/fei-zhu-liu-yu-lu/jing-yin-tuo-huang-zhe/quote-578.html">在数据洪流中保持静默，不是失语，而是为灵魂预留回声的余地。</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('在数据洪流中保持静默，不是失语，而是为灵魂预留回声的余地。')">一键复制</button>
+            </div>
+        </article>
+        
     </div>
     <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
         <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
@@ -123,7 +133,7 @@
 
 
 
-    let QUOTES = '[{"content":"在数据洪流中保持静默，不是失语，而是为灵魂预留回声的间隙。","url":"https://quote.aistool.org/fei-zhu-liu-yu-lu/jing-yin-tuo-huang-zhe/quote-787.html"},{"content":"在数据洪流中保持静默，不是失语，而是为灵魂预留回声的空隙。","url":"https://quote.aistool.org/fei-zhu-liu-yu-lu/jing-yin-tuo-huang-zhe/quote-743.html"}]';
+    let QUOTES = '[{"content":"在数据洪流中保持静默，不是失语，而是为灵魂预留回声的间隙。","url":"https://quote.aistool.org/fei-zhu-liu-yu-lu/jing-yin-tuo-huang-zhe/quote-787.html"},{"content":"在数据洪流中保持静默，不是失语，而是为灵魂预留回声的空隙。","url":"https://quote.aistool.org/fei-zhu-liu-yu-lu/jing-yin-tuo-huang-zhe/quote-743.html"},{"content":"在数据洪流中保持静默，不是失语，而是为灵魂预留回声的余地。","url":"https://quote.aistool.org/fei-zhu-liu-yu-lu/jing-yin-tuo-huang-zhe/quote-578.html"}]';
     QUOTES = JSON.parse(QUOTES)
     if (!Array.isArray(QUOTES)) {
         QUOTES = [];

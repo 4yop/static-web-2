@@ -149,16 +149,6 @@
             </div>
         </article>
         
-        <article class="quote-card">
-            <div class="quote-text">
-                <a target="_blank"  href="https://quote.aistool.org/fei-zhu-liu-yu-lu/jing-mo-bian-ma-shi/quote-578.html">在数据洪流中保持静默，不是失语，而是为灵魂预留回声的余地。</a>
-            </div>
-            <div class="quote-footer">
-                <span class="quote-source" style="visibility: hidden;">—— </span>
-                <button class="copy-btn" onclick="copyText('在数据洪流中保持静默，不是失语，而是为灵魂预留回声的余地。')">一键复制</button>
-            </div>
-        </article>
-        
     </div>
     <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
         <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
@@ -183,7 +173,7 @@
 
 
 
-    let QUOTES = '[{"content":"在比特洪流中保持沉默，并非失语，而是选择以静默编码对抗世界的喧嚣。","url":"https://quote.aistool.org/fei-zhu-liu-yu-lu/jing-mo-bian-ma-shi/quote-942.html"},{"content":"在数据洪流中保持静默，不是失语，而是为意义留白。","url":"https://quote.aistool.org/fei-zhu-liu-yu-lu/jing-mo-bian-ma-shi/quote-937.html"},{"content":"在数据的洪流中，静默是唯一的避风港，而理解是通往彼岸的舟。","url":"https://quote.aistool.org/fei-zhu-liu-yu-lu/jing-mo-bian-ma-shi/quote-908.html"},{"content":"在二进制海的寂静里，我打捞着未编译的星光。","url":"https://quote.aistool.org/fei-zhu-liu-yu-lu/jing-mo-bian-ma-shi/quote-857.html"},{"content":"在数据的洪流中，静默是唯一的源代码。","url":"https://quote.aistool.org/fei-zhu-liu-yu-lu/jing-mo-bian-ma-shi/quote-812.html"},{"content":"在代码的寂静中，我听见了宇宙的心跳。","url":"https://quote.aistool.org/fei-zhu-liu-yu-lu/jing-mo-bian-ma-shi/quote-725.html"},{"content":"在代码的寂静中，我听见了宇宙的呼吸。","url":"https://quote.aistool.org/fei-zhu-liu-yu-lu/jing-mo-bian-ma-shi/quote-584.html"},{"content":"在数据洪流中保持静默，不是失语，而是为灵魂预留回声的余地。","url":"https://quote.aistool.org/fei-zhu-liu-yu-lu/jing-mo-bian-ma-shi/quote-578.html"}]';
+    let QUOTES = '[{"content":"在比特洪流中保持沉默，并非失语，而是选择以静默编码对抗世界的喧嚣。","url":"https://quote.aistool.org/fei-zhu-liu-yu-lu/jing-mo-bian-ma-shi/quote-942.html"},{"content":"在数据洪流中保持静默，不是失语，而是为意义留白。","url":"https://quote.aistool.org/fei-zhu-liu-yu-lu/jing-mo-bian-ma-shi/quote-937.html"},{"content":"在数据的洪流中，静默是唯一的避风港，而理解是通往彼岸的舟。","url":"https://quote.aistool.org/fei-zhu-liu-yu-lu/jing-mo-bian-ma-shi/quote-908.html"},{"content":"在二进制海的寂静里，我打捞着未编译的星光。","url":"https://quote.aistool.org/fei-zhu-liu-yu-lu/jing-mo-bian-ma-shi/quote-857.html"},{"content":"在数据的洪流中，静默是唯一的源代码。","url":"https://quote.aistool.org/fei-zhu-liu-yu-lu/jing-mo-bian-ma-shi/quote-812.html"},{"content":"在代码的寂静中，我听见了宇宙的心跳。","url":"https://quote.aistool.org/fei-zhu-liu-yu-lu/jing-mo-bian-ma-shi/quote-725.html"},{"content":"在代码的寂静中，我听见了宇宙的呼吸。","url":"https://quote.aistool.org/fei-zhu-liu-yu-lu/jing-mo-bian-ma-shi/quote-584.html"}]';
     QUOTES = JSON.parse(QUOTES)
     if (!Array.isArray(QUOTES)) {
         QUOTES = [];

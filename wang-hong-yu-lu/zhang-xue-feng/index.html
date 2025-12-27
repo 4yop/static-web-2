@@ -89,16 +89,6 @@
             </div>
         </article>
         
-        <article class="quote-card">
-            <div class="quote-text">
-                <a target="_blank"  href="https://quote.aistool.org/wang-hong-yu-lu/zhang-xue-feng/quote-590.html">人生没有白走的路，每一步都算数，哪怕是在直播间里翻车。</a>
-            </div>
-            <div class="quote-footer">
-                <span class="quote-source" style="visibility: hidden;">—— </span>
-                <button class="copy-btn" onclick="copyText('人生没有白走的路，每一步都算数，哪怕是在直播间里翻车。')">一键复制</button>
-            </div>
-        </article>
-        
     </div>
     <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
         <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
@@ -123,7 +113,7 @@
 
 
 
-    let QUOTES = '[{"content":"学习是你改变命运最廉价的途径。","url":"https://quote.aistool.org/wang-hong-yu-lu/zhang-xue-feng/quote-742.html"},{"content":"人生没有白走的路，每一步都算数，哪怕是在直播间里翻车。","url":"https://quote.aistool.org/wang-hong-yu-lu/zhang-xue-feng/quote-590.html"}]';
+    let QUOTES = '[{"content":"学习是你改变命运最廉价的途径。","url":"https://quote.aistool.org/wang-hong-yu-lu/zhang-xue-feng/quote-742.html"}]';
     QUOTES = JSON.parse(QUOTES)
     if (!Array.isArray(QUOTES)) {
         QUOTES = [];

@@ -79,6 +79,16 @@
     </section>
     <div id="quotes-list-faker" ref="quotes-list-faker">
         
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/ming-ren-yu-qi-ye-jia-yu-lu/zhang-lei/quote-990.html">真正的成功，不在于你站得多高，而在于你跌到谷底时还能爬起来。</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('真正的成功，不在于你站得多高，而在于你跌到谷底时还能爬起来。')">一键复制</button>
+            </div>
+        </article>
+        
     </div>
     <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
         <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
@@ -103,7 +113,7 @@
 
 
 
-    let QUOTES = '[]';
+    let QUOTES = '[{"content":"真正的成功，不在于你站得多高，而在于你跌到谷底时还能爬起来。","url":"https://quote.aistool.org/ming-ren-yu-qi-ye-jia-yu-lu/zhang-lei/quote-990.html"}]';
     QUOTES = JSON.parse(QUOTES)
     if (!Array.isArray(QUOTES)) {
         QUOTES = [];

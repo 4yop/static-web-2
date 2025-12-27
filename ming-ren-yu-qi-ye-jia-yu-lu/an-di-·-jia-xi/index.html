@@ -79,6 +79,16 @@
     </section>
     <div id="quotes-list-faker" ref="quotes-list-faker">
         
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/ming-ren-yu-qi-ye-jia-yu-lu/an-di-·-jia-xi/quote-991.html">在云计算领域，成功的关键是始终以客户需求为导向，并勇于颠覆自我。</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('在云计算领域，成功的关键是始终以客户需求为导向，并勇于颠覆自我。')">一键复制</button>
+            </div>
+        </article>
+        
     </div>
     <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
         <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
@@ -103,7 +113,7 @@
 
 
 
-    let QUOTES = '[]';
+    let QUOTES = '[{"content":"在云计算领域，成功的关键是始终以客户需求为导向，并勇于颠覆自我。","url":"https://quote.aistool.org/ming-ren-yu-qi-ye-jia-yu-lu/an-di-·-jia-xi/quote-991.html"}]';
     QUOTES = JSON.parse(QUOTES)
     if (!Array.isArray(QUOTES)) {
         QUOTES = [];

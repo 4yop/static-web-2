@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>记忆拾荒者经典语录 | 非主流情感语录大全 | 记忆拾荒者经典语录</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="title" content="记忆拾荒者：拾起被遗忘的时光碎片，非主流伤感语录集" />
+    <meta name="keywords" content="记忆拾荒者, 非主流语录, 情感语录, 伤感句子, 怀旧文字, 经典语录, 拾荒者语录" />
+
+    <meta name="description" content="这里是记忆拾荒者的专属语录空间。我们收集那些散落在时光角落里的非主流情感句子，每一句都关于遗忘、拾起与治愈。走进记忆拾荒者的文字世界，找寻触动你心的那一份共鸣。">
+
+
+    <meta name="google-adsense-account" content="ca-pub-8982726393306273">
+    <meta name="baidu-site-verification" content="codeva-xEZKfvoDNR" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3CPK6GJ06E"></script>
+    <script>
+
+
+        if (['famous.aistool.com'].includes(window.location.hostname))
+        {
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'G-3CPK6GJ06E');
+        } else {
+            // 在 localhost 或其他测试域名下，只初始化 gtag 函数，但不发送数据
+            console.log(`[GA4 DEV MODE] GA tracking is disabled on: ${window.location.hostname}`);
+        }
+    </script>
+
+    <script src="https://quote.aistool.org//js/flexsearch.bundle.js?v=1"></script>
+    <script src="https://quote.aistool.org//js/vue.min.js?v=1"></script>
+    <link rel="stylesheet" href="https://quote.aistool.org//css/famous-quotes.css?v=1">
+</head>
+<body>
+
+<script>
+
+</script>
+
+<header>
+    <div class="container">
+        <h1>灵感语录库</h1>
+    </div>
+</header>
+
+<main class="container" id="app">
+    <nav class="breadcrumb">
+        <a href="https://quote.aistool.org/">首页</a> &gt;
+        
+        <a href="https://quote.aistool.org/fei-zhu-liu-yu-lu/">非主流语录</a> &gt;
+        
+        <a href="https://quote.aistool.org/fei-zhu-liu-yu-lu/ji-yi-shi-huang-zhe//index.html">记忆拾荒者</a> &gt;
+        
+    </nav>
+
+    <section class="page-header">
+        <h2 class="page-title">记忆拾荒者经典语录</h2>
+        <p class="author-bio">‘记忆拾荒者’是一位以收集、创作怀旧与治愈系文字而闻名的情感作家。其风格独特，擅长从被遗忘的记忆碎片中提炼出触动人心的非主流语录，文字细腻且充满画面感，在读者中拥有广泛影响力。</p>
+    </section>
+
+    <div class="ad-banner">[Ad Placeholder: Top Banner]</div>
+
+    <section id="filter-toolbox">
+        <div class="filter-group">
+            <label>搜索</label>
+            <input type="text" id="search-input" v-model.trim="searchInput"  placeholder="输入关键词查找，例如：失败、员工、机会...">
+        </div>
+<!--        <div class="filter-group" style="margin-top: 25px;">-->
+<!--            <label>主题标签 (Topics)</label>-->
+<!--            <div id="tag-container"></div>-->
+<!--        </div>-->
+    </section>
+    <div id="quotes-list-faker" ref="quotes-list-faker">
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/fei-zhu-liu-yu-lu/ji-yi-shi-huang-zhe/quote-867.html">在数据的洪流中，我只拾取那些能照亮内心的碎片。</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('在数据的洪流中，我只拾取那些能照亮内心的碎片。')">一键复制</button>
+            </div>
+        </article>
+        
+    </div>
+    <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
+        <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
+            <div class="quote-text"  @click="window.open(item.url, '_blank')" v-html="item.content"></div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden">—— </span>
+                <button class="copy-btn" @click="copyText(item.content)">一键复制</button>
+            </div>
+        </article>
+    </div>
+
+    <div class="ad-banner">[Ad Placeholder: Bottom Banner]</div>
+</main>
+
+<footer style="text-align: center; color: var(--secondary-text); padding: 50px 0; border-top: 1px solid #eee; margin-top: 50px; font-size: 0.9em;">
+    <p>&copy; 2025 灵感语录库. 记录时代的声音。</p>
+</footer>
+
+</body>
+</html>
+<script async>
+
+
+
+    let QUOTES = '[{"content":"在数据的洪流中，我只拾取那些能照亮内心的碎片。","url":"https://quote.aistool.org/fei-zhu-liu-yu-lu/ji-yi-shi-huang-zhe/quote-867.html"}]';
+    QUOTES = JSON.parse(QUOTES)
+    if (!Array.isArray(QUOTES)) {
+        QUOTES = [];
+    }
+    function copyText(text){
+        navigator.clipboard.writeText(text).then(() => {
+            alert('复制成功！');
+        });
+    }
+
+    var app = new Vue({
+        el : '#app',
+        data() {
+            return {
+                quotes : QUOTES,
+                searchInput : '',
+
+            }
+        },
+        created() {
+
+        },
+        mounted() {
+            if (this.$refs['quotes-list-faker']) {
+                this.$refs['quotes-list-faker'].remove();
+            }
+
+        },
+        computed: {
+            filteredQuotes() {
+
+                console.log(this.searchInput)
+                if (!this.searchInput) return this.quotes;
+
+                const res = this.quotes.filter((item)=>{
+                    const res= item.content && item.content.includes(this.searchInput)
+                    return res;
+                });
+                return res
+            }
+        },
+        methods : {
+            copyText(text){
+                copyText(text);
+            }
+        },
+    });
+</script>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>阿兰·图灵名言精选｜计算机科学之父的智慧语录 | 阿兰·图灵经典语录</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="title" content="阿兰·图灵经典名言大全｜图灵语录、人工智能先驱思想精华" />
+    <meta name="keywords" content="阿兰·图灵名言,图灵语录,计算机之父名言,人工智能先驱语录,图灵经典句子" />
+
+    <meta name="description" content="汇集阿兰·图灵最具影响力的原创名言与深刻思考，涵盖计算理论、人工智能、逻辑哲学与人性反思，权威整理，中英双语对照，适合学习、引用与深度阅读。">
+
+
+    <meta name="google-adsense-account" content="ca-pub-8982726393306273">
+    <meta name="baidu-site-verification" content="codeva-xEZKfvoDNR" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3CPK6GJ06E"></script>
+    <script>
+
+
+        if (['famous.aistool.com'].includes(window.location.hostname))
+        {
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'G-3CPK6GJ06E');
+        } else {
+            // 在 localhost 或其他测试域名下，只初始化 gtag 函数，但不发送数据
+            console.log(`[GA4 DEV MODE] GA tracking is disabled on: ${window.location.hostname}`);
+        }
+    </script>
+
+    <script src="https://quote.aistool.org//js/flexsearch.bundle.js?v=1"></script>
+    <script src="https://quote.aistool.org//js/vue.min.js?v=1"></script>
+    <link rel="stylesheet" href="https://quote.aistool.org//css/famous-quotes.css?v=1">
+</head>
+<body>
+
+<script>
+
+</script>
+
+<header>
+    <div class="container">
+        <h1>灵感语录库</h1>
+    </div>
+</header>
+
+<main class="container" id="app">
+    <nav class="breadcrumb">
+        <a href="https://quote.aistool.org/">首页</a> &gt;
+        
+        <a href="https://quote.aistool.org/li-shi-ren-wu/">历史人物</a> &gt;
+        
+        <a href="https://quote.aistool.org/li-shi-ren-wu/a-lan-·-tu-ling//index.html">阿兰·图灵</a> &gt;
+        
+    </nav>
+
+    <section class="page-header">
+        <h2 class="page-title">阿兰·图灵经典语录</h2>
+        <p class="author-bio">阿兰·图灵是20世纪最具开创性的思想家之一，他奠定了现代计算机的理论基础（图灵机），在二战中破译恩尼格玛密码扭转战局，并首次提出‘机器能否思考’这一根本命题，被誉为人工智能领域的奠基人。其思想兼具严谨性、诗意与人文深度。</p>
+    </section>
+
+    <div class="ad-banner">[Ad Placeholder: Top Banner]</div>
+
+    <section id="filter-toolbox">
+        <div class="filter-group">
+            <label>搜索</label>
+            <input type="text" id="search-input" v-model.trim="searchInput"  placeholder="输入关键词查找，例如：失败、员工、机会...">
+        </div>
+<!--        <div class="filter-group" style="margin-top: 25px;">-->
+<!--            <label>主题标签 (Topics)</label>-->
+<!--            <div id="tag-container"></div>-->
+<!--        </div>-->
+    </section>
+    <div id="quotes-list-faker" ref="quotes-list-faker">
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/li-shi-ren-wu/a-lan-·-tu-ling/quote-863.html">我们只能看到前方很短的路，但我们已经能看到那里有很多事情要做。</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('我们只能看到前方很短的路，但我们已经能看到那里有很多事情要做。')">一键复制</button>
+            </div>
+        </article>
+        
+    </div>
+    <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
+        <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
+            <div class="quote-text"  @click="window.open(item.url, '_blank')" v-html="item.content"></div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden">—— </span>
+                <button class="copy-btn" @click="copyText(item.content)">一键复制</button>
+            </div>
+        </article>
+    </div>
+
+    <div class="ad-banner">[Ad Placeholder: Bottom Banner]</div>
+</main>
+
+<footer style="text-align: center; color: var(--secondary-text); padding: 50px 0; border-top: 1px solid #eee; margin-top: 50px; font-size: 0.9em;">
+    <p>&copy; 2025 灵感语录库. 记录时代的声音。</p>
+</footer>
+
+</body>
+</html>
+<script async>
+
+
+
+    let QUOTES = '[{"content":"我们只能看到前方很短的路，但我们已经能看到那里有很多事情要做。","url":"https://quote.aistool.org/li-shi-ren-wu/a-lan-·-tu-ling/quote-863.html"}]';
+    QUOTES = JSON.parse(QUOTES)
+    if (!Array.isArray(QUOTES)) {
+        QUOTES = [];
+    }
+    function copyText(text){
+        navigator.clipboard.writeText(text).then(() => {
+            alert('复制成功！');
+        });
+    }
+
+    var app = new Vue({
+        el : '#app',
+        data() {
+            return {
+                quotes : QUOTES,
+                searchInput : '',
+
+            }
+        },
+        created() {
+
+        },
+        mounted() {
+            if (this.$refs['quotes-list-faker']) {
+                this.$refs['quotes-list-faker'].remove();
+            }
+
+        },
+        computed: {
+            filteredQuotes() {
+
+                console.log(this.searchInput)
+                if (!this.searchInput) return this.quotes;
+
+                const res = this.quotes.filter((item)=>{
+                    const res= item.content && item.content.includes(this.searchInput)
+                    return res;
+                });
+                return res
+            }
+        },
+        methods : {
+            copyText(text){
+                copyText(text);
+            }
+        },
+    });
+</script>

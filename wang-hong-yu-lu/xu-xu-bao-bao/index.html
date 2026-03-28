@@ -79,6 +79,106 @@
     </section>
     <div id="quotes-list-faker" ref="quotes-list-faker">
         
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1846.html">我就说嘛，实力不允许我低调！</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('我就说嘛，实力不允许我低调！')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1852.html">人生嘛，就是要活得精彩，活得痛快！</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('人生嘛，就是要活得精彩，活得痛快！')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1856.html">兄弟们，跟着我，没错的！</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('兄弟们，跟着我，没错的！')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1839.html">这装备，我必须得强化！</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('这装备，我必须得强化！')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1831.html">太好了！</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('太好了！')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1842.html">你们不懂，这叫战略性撤退！</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('你们不懂，这叫战略性撤退！')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1849.html">钱算什么，兄弟情才是最重要的！</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('钱算什么，兄弟情才是最重要的！')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1835.html">我靠，这牌能输啊！</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('我靠，这牌能输啊！')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1850.html">我旭旭宝宝，做人做事，问心无愧！</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('我旭旭宝宝，做人做事，问心无愧！')">一键复制</button>
+            </div>
+        </article>
+        
+        <article class="quote-card">
+            <div class="quote-text">
+                <a target="_blank"  href="https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1845.html">这波操作，666！</a>
+            </div>
+            <div class="quote-footer">
+                <span class="quote-source" style="visibility: hidden;">—— </span>
+                <button class="copy-btn" onclick="copyText('这波操作，666！')">一键复制</button>
+            </div>
+        </article>
+        
     </div>
     <div id="quotes-list"  style="display: none" :style="{'display' : 'grid'}">
         <article class="quote-card" v-for="(item, index) in filteredQuotes" :key="index">
@@ -103,7 +203,7 @@
 
 
 
-    let QUOTES = '[]';
+    let QUOTES = '[{"content":"小伙子，你的路走窄了。","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1829.html"},{"content":"套你猴子！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1830.html"},{"content":"太好了！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1831.html"},{"content":"你完蛋！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1832.html"},{"content":"呦呦呦，你看你牛的那个样！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1833.html"},{"content":"你走了算你厉害！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1834.html"},{"content":"我靠，这牌能输啊！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1835.html"},{"content":"这牌……","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1836.html"},{"content":"我是DNF主播一哥，我说的！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1837.html"},{"content":"兄弟们，今天我们要做一件大事！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1838.html"},{"content":"这装备，我必须得强化！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1839.html"},{"content":"不是我不行，是这游戏有问题！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1840.html"},{"content":"我这人就是这样，输了就输了，下把再来！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1841.html"},{"content":"你们不懂，这叫战略性撤退！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1842.html"},{"content":"我旭旭宝宝，从来不认输！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1843.html"},{"content":"兄弟，你这操作，我给你打满分！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1844.html"},{"content":"这波操作，666！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1845.html"},{"content":"我就说嘛，实力不允许我低调！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1846.html"},{"content":"打游戏嘛，开心就好！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1847.html"},{"content":"我这人最讲义气，兄弟有难，必须上！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1848.html"},{"content":"钱算什么，兄弟情才是最重要的！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1849.html"},{"content":"我旭旭宝宝，做人做事，问心无愧！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1850.html"},{"content":"直播这么多年，最感谢的就是陪伴我的兄弟们！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1851.html"},{"content":"人生嘛，就是要活得精彩，活得痛快！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1852.html"},{"content":"我这辈子最正确的决定，就是做主播！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1853.html"},{"content":"输赢不重要，重要的是我们一起玩得开心！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1854.html"},{"content":"这游戏，我玩了这么多年，感情深着呢！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1855.html"},{"content":"兄弟们，跟着我，没错的！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1856.html"},{"content":"我旭旭宝宝，说到做到！","url":"https://quote.aistool.org/wang-hong-yu-lu/xu-xu-bao-bao/quote-1857.html"}]';
     QUOTES = JSON.parse(QUOTES)
     if (!Array.isArray(QUOTES)) {
         QUOTES = [];
